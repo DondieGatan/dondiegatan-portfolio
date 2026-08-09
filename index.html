@@ -105,6 +105,48 @@
         </div>
       </article>
 
+      <article class="project" id="taskflow">
+        <div class="project-header">
+          <div>
+            <h3>TaskFlow</h3>
+            <p class="project-tagline">A REST API and web UI built around full CRUD</p>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/DondieGatan/taskflow-crud" target="_blank" rel="noopener" class="btn btn-small">Source Code ↗</a>
+          </div>
+        </div>
+
+        <p class="project-desc">
+          A task manager built to be a clean, complete demonstration of CRUD fundamentals:
+          an Express REST API backed by SQLite, with server-side validation on every write,
+          and a dependency-free HTML/CSS/JS frontend that consumes the API directly —
+          no framework, no build step.
+        </p>
+
+        <div class="project-gallery">
+          <figure>
+            <img src="assets/screenshots/taskflow/taskflow_board.png" alt="TaskFlow task board with filters, priority and status badges" loading="lazy">
+            <figcaption>Task board — create, filter, edit, complete, delete</figcaption>
+          </figure>
+        </div>
+
+        <ul class="project-features">
+          <li>Full CRUD REST API: <code>GET / GET :id / POST / PUT / DELETE</code> on <code>/api/tasks</code></li>
+          <li>Server-side validation with 400/404 responses for missing fields or invalid enum values</li>
+          <li>Filterable task list by status and category, with live total/done counts</li>
+          <li>Partial updates via PUT — a "mark done" action only patches the status field</li>
+          <li>Built on Node's built-in <code>node:sqlite</code> module — zero external database setup</li>
+        </ul>
+
+        <div class="project-stack">
+          <span class="tag">Node.js</span>
+          <span class="tag">Express</span>
+          <span class="tag">node:sqlite</span>
+          <span class="tag">REST API</span>
+          <span class="tag">HTML/CSS/JS</span>
+        </div>
+      </article>
+
       <article class="project" id="hr-attrition">
         <div class="project-header">
           <div>
@@ -156,7 +198,7 @@
         </div>
         <div class="skill-group">
           <h4>Web &amp; Backend</h4>
-          <p>Flask, REST APIs, session-based auth, Flask-Mail, Jinja2</p>
+          <p>Flask, Express, REST API design, session-based auth, Flask-Mail, Jinja2</p>
         </div>
         <div class="skill-group">
           <h4>Data &amp; ML</h4>

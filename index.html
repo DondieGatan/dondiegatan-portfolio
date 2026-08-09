@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dondie Godwin Gatan — Portfolio</title>
+<meta name="description" content="Software engineering portfolio of Dondie Godwin Gatan — full-stack development and machine learning projects.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-brand">Dondie Godwin Gatan</a>
+    <nav class="nav-links">
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <a href="https://github.com/DondieGatan" target="_blank" rel="noopener" class="nav-cta">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section id="top" class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Software Engineering Graduate</p>
+      <h1>I build full-stack apps that turn messy real-world data into something useful.</h1>
+      <p class="hero-sub">
+        Final-year Software Engineering student focused on full-stack web development,
+        NLP, and applied machine learning. My undergraduate project, Smart Resume Analyser,
+        parses real resume documents with OCR and NLP to score and give feedback on them —
+        end to end, from upload to database to dashboard.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="mailto:dcgatan@gmail.com" class="btn btn-ghost">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="section-inner">
+      <h2 class="section-title">Featured Projects</h2>
+
+      <article class="project" id="resume-analyser">
+        <div class="project-header">
+          <div>
+            <h3>Smart Resume Analyser</h3>
+            <p class="project-tagline">AI-assisted resume scoring, feedback, and job-matching platform</p>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/DondieGatan/Last-Project" target="_blank" rel="noopener" class="btn btn-small">Source Code ↗</a>
+          </div>
+        </div>
+
+        <p class="project-desc">
+          A full-stack Flask web application that takes a candidate's PDF or scanned-image resume,
+          extracts its text with OCR and PDF parsing, and analyses it with NLP to produce a scored,
+          section-by-section breakdown — skills, education, experience, and formatting — with an
+          ATS-compatibility check and concrete suggestions for improvement. It also matches a resume
+          against a pasted job description, generates personalised career feedback, and includes a
+          guided resume builder and an analytics dashboard summarising every resume analysed so far.
+        </p>
+
+        <div class="project-gallery">
+          <figure>
+            <img src="assets/screenshots/home_upload.png" alt="Smart Resume Analyser upload screen with feature overview" loading="lazy">
+            <figcaption>Upload &amp; feature overview</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/builder.png" alt="Smart Resume Analyser resume builder page" loading="lazy">
+            <figcaption>Guided resume builder</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/login.png" alt="Smart Resume Analyser login screen" loading="lazy">
+            <figcaption>Authentication</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/register.png" alt="Smart Resume Analyser account creation screen" loading="lazy">
+            <figcaption>Account creation</figcaption>
+          </figure>
+        </div>
+
+        <ul class="project-features">
+          <li>OCR + PDF text extraction (PyMuPDF, Tesseract) so both scanned images and native PDFs work</li>
+          <li>NLP-driven skill extraction and section scoring (NLTK tokenisation, stopword filtering, tagging)</li>
+          <li>ATS-compatibility simulation with a transparent, explainable scoring breakdown</li>
+          <li>Job-description matching to rank a resume's fit against a specific role</li>
+          <li>Personalised feedback generation based on career goal, experience level, and target role</li>
+          <li>Auth system with email-based password reset (Flask-Mail) and per-user history</li>
+          <li>Analytics dashboard (score distribution, top skills, career-field breakdown) with CSV/JSON export for Power BI</li>
+        </ul>
+
+        <div class="project-stack">
+          <span class="tag">Python</span>
+          <span class="tag">Flask</span>
+          <span class="tag">SQL Server</span>
+          <span class="tag">NLTK</span>
+          <span class="tag">PyMuPDF</span>
+          <span class="tag">Tesseract OCR</span>
+          <span class="tag">Flask-Mail</span>
+          <span class="tag">HTML/CSS/JS</span>
+        </div>
+      </article>
+
+      <article class="project" id="hr-attrition">
+        <div class="project-header">
+          <div>
+            <h3>IBM HR Employee Attrition Prediction</h3>
+            <p class="project-tagline">Classification models identifying why employees leave</p>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/DondieGatan/hr-attrition-prediction" target="_blank" rel="noopener" class="btn btn-small">Source Code ↗</a>
+          </div>
+        </div>
+
+        <p class="project-desc">
+          An end-to-end machine learning analysis of the IBM HR Employee Attrition dataset: cleaning
+          and transforming raw HR records, handling class imbalance with SMOTE, and training and
+          comparing three classifiers to predict which employees are at risk of leaving. The notebook
+          goes beyond model accuracy to interpret <em>why</em> — surfacing the strongest attrition
+          drivers and translating them into concrete retention recommendations.
+        </p>
+
+        <ul class="project-features">
+          <li>Data cleaning: median imputation, duplicate removal, IQR-based outlier detection</li>
+          <li>Feature encoding and scaling, with SMOTE applied to correct class imbalance</li>
+          <li>Trained and compared Logistic Regression, Decision Tree, and Random Forest classifiers</li>
+          <li>Evaluated on accuracy, sensitivity, specificity, precision, F1, and ROC-AUC, with ROC curves plotted for all three</li>
+          <li>Random Forest feature importance identified overtime, income, job satisfaction, and work-life balance as the top attrition drivers</li>
+          <li>Translated model findings into risk scoring (Low/Medium/High) and business recommendations</li>
+        </ul>
+
+        <div class="project-stack">
+          <span class="tag">Python</span>
+          <span class="tag">pandas</span>
+          <span class="tag">scikit-learn</span>
+          <span class="tag">imbalanced-learn</span>
+          <span class="tag">matplotlib</span>
+          <span class="tag">seaborn</span>
+          <span class="tag">Jupyter</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills" class="section section-alt">
+    <div class="section-inner">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h4>Languages</h4>
+          <p>Python, JavaScript, SQL, HTML/CSS</p>
+        </div>
+        <div class="skill-group">
+          <h4>Web &amp; Backend</h4>
+          <p>Flask, REST APIs, session-based auth, Flask-Mail, Jinja2</p>
+        </div>
+        <div class="skill-group">
+          <h4>Data &amp; ML</h4>
+          <p>pandas, NumPy, scikit-learn, imbalanced-learn, NLTK, model evaluation (ROC-AUC, F1, precision/recall)</p>
+        </div>
+        <div class="skill-group">
+          <h4>Data &amp; Documents</h4>
+          <p>SQL Server (pyodbc), PyMuPDF, Tesseract OCR, CSV/JSON export, Power BI integration</p>
+        </div>
+        <div class="skill-group">
+          <h4>Tools</h4>
+          <p>Git &amp; GitHub, Jupyter, VS Code, matplotlib/seaborn</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="section-inner contact-inner">
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="contact-sub">Open to internship, graduate, and junior developer opportunities.</p>
+      <div class="contact-links">
+        <a href="mailto:dcgatan@gmail.com" class="btn btn-primary">dcgatan@gmail.com</a>
+        <a href="https://github.com/DondieGatan" target="_blank" rel="noopener" class="btn btn-ghost">github.com/DondieGatan</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>&copy; 2026 Dondie Godwin Gatan</p>
+</footer>
+
+</body>
+</html>

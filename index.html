@@ -105,6 +105,95 @@
         </div>
       </article>
 
+      <article class="project" id="library-management">
+        <div class="project-header">
+          <div>
+            <h3>Library Management System</h3>
+            <p class="project-tagline">Books, members, and borrow/return in one CRUD app</p>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/DondieGatan/library-management-system" target="_blank" rel="noopener" class="btn btn-small">Source Code ↗</a>
+          </div>
+        </div>
+
+        <p class="project-desc">
+          A Flask app for running a small library: manage the book catalogue and member
+          roster, then check books in and out through a dedicated loans workflow that
+          keeps available-copy counts and due dates consistent automatically.
+        </p>
+
+        <div class="project-gallery">
+          <figure>
+            <img src="assets/screenshots/library/dashboard.png" alt="Library Management System dashboard with book, member, and loan stats" loading="lazy">
+            <figcaption>Dashboard — live stats and active loans</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/library/loans.png" alt="Library Management System loans page with borrow form and loan history" loading="lazy">
+            <figcaption>Borrow / return workflow</figcaption>
+          </figure>
+        </div>
+
+        <ul class="project-features">
+          <li>Full CRUD on books and members, each with live search</li>
+          <li>Borrowing decrements available copies and creates a loan record; returning reverses it</li>
+          <li>A book can't be borrowed once its available copies reach zero</li>
+          <li>Dashboard tracks titles, total copies, members, active loans, and overdue loans</li>
+          <li>Loan list filterable by status, with overdue rows visually flagged</li>
+        </ul>
+
+        <div class="project-stack">
+          <span class="tag">Python</span>
+          <span class="tag">Flask</span>
+          <span class="tag">SQLite</span>
+          <span class="tag">Jinja2</span>
+          <span class="tag">HTML/CSS</span>
+        </div>
+      </article>
+
+      <article class="project" id="expense-tracker">
+        <div class="project-header">
+          <div>
+            <h3>Expense Tracker</h3>
+            <p class="project-tagline">C# / ASP.NET Core MVC expense manager with EF Core</p>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/DondieGatan/expense-tracker" target="_blank" rel="noopener" class="btn btn-small">Source Code ↗</a>
+          </div>
+        </div>
+
+        <p class="project-desc">
+          A personal expense tracker built in C# on ASP.NET Core MVC with Entity Framework
+          Core against SQL Server — full CRUD over logged expenses, category filtering, and
+          a dashboard that rolls everything up into totals and a spend-by-category breakdown.
+        </p>
+
+        <div class="project-gallery">
+          <figure>
+            <img src="assets/screenshots/expense-tracker/dashboard.png" alt="Expense Tracker dashboard with totals and category breakdown" loading="lazy">
+            <figcaption>Dashboard — totals and category breakdown</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/expense-tracker/expenses.png" alt="Expense Tracker expense list with category filters" loading="lazy">
+            <figcaption>Expense list with category filters</figcaption>
+          </figure>
+        </div>
+
+        <ul class="project-features">
+          <li>Create, edit, and delete expenses with server-side model validation</li>
+          <li>Filter the expense list by category</li>
+          <li>Dashboard aggregates total spent, this month's spend, and a per-category breakdown</li>
+          <li>Code-First EF Core migrations against SQL Server, applied automatically on startup</li>
+        </ul>
+
+        <div class="project-stack">
+          <span class="tag">C#</span>
+          <span class="tag">ASP.NET Core MVC</span>
+          <span class="tag">Entity Framework Core</span>
+          <span class="tag">SQL Server</span>
+          <span class="tag">Razor</span>
+        </div>
+      </article>
+
       <article class="project" id="taskflow">
         <div class="project-header">
           <div>
@@ -194,11 +283,11 @@
       <div class="skills-grid">
         <div class="skill-group">
           <h4>Languages</h4>
-          <p>Python, JavaScript, SQL, HTML/CSS</p>
+          <p>Python, JavaScript, C#, SQL, HTML/CSS</p>
         </div>
         <div class="skill-group">
           <h4>Web &amp; Backend</h4>
-          <p>Flask, Express, REST API design, session-based auth, Flask-Mail, Jinja2</p>
+          <p>Flask, Express, ASP.NET Core MVC, REST API design, session-based auth, Flask-Mail, Jinja2, Razor</p>
         </div>
         <div class="skill-group">
           <h4>Data &amp; ML</h4>
@@ -206,7 +295,7 @@
         </div>
         <div class="skill-group">
           <h4>Data &amp; Documents</h4>
-          <p>SQL Server (pyodbc), PyMuPDF, Tesseract OCR, CSV/JSON export, Power BI integration</p>
+          <p>SQL Server (pyodbc, Entity Framework Core), SQLite, PyMuPDF, Tesseract OCR, CSV/JSON export, Power BI integration</p>
         </div>
         <div class="skill-group">
           <h4>Tools</h4>

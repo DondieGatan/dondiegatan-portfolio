@@ -105,11 +105,58 @@
         </div>
       </article>
 
+      <article class="project" id="mori-matcha">
+        <div class="project-header">
+          <div>
+            <h3>Mori Matcha</h3>
+            <p class="project-tagline">Live cafe website with a real ordering and admin backend</p>
+          </div>
+          <div class="project-links">
+            <a href="https://mori-matcha-inky.vercel.app" target="_blank" rel="noopener" class="btn btn-small btn-primary">Live Demo ↗</a>
+            <a href="https://github.com/DondieGatan/mori-matcha" target="_blank" rel="noopener" class="btn btn-small">Source Code ↗</a>
+          </div>
+        </div>
+
+        <p class="project-desc">
+          A production website for a real cafe business — a React/Vite frontend backed by
+          Vercel serverless functions and a Postgres order log, with an admin dashboard for
+          managing incoming orders, a live Google Reviews sync, and full SEO/PWA setup.
+          Deployed and actually in use, not just a demo.
+        </p>
+
+        <div class="project-gallery">
+          <figure>
+            <img src="assets/screenshots/mori-matcha/home.png" alt="Mori Matcha homepage hero and menu section" loading="lazy">
+            <figcaption>Homepage — menu and ordering flow</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/mori-matcha/feedback.png" alt="Mori Matcha customer feedback section with live Google reviews" loading="lazy">
+            <figcaption>Customer feedback — live Google Reviews sync</figcaption>
+          </figure>
+        </div>
+
+        <ul class="project-features">
+          <li>Cart-based ordering flow that writes to a Postgres order log via Vercel serverless functions, with rate limiting on submission</li>
+          <li>Admin dashboard for managing order status, with CSV export</li>
+          <li>Live Google Places reviews sync merged with a curated fallback list, so real reviews show up as soon as Google surfaces them without ever leaving the section empty</li>
+          <li>Per-drink low-stock / sold-out toggling and Vercel Analytics</li>
+          <li>Full SEO/PWA setup — meta tags, JSON-LD, installable manifest</li>
+        </ul>
+
+        <div class="project-stack">
+          <span class="tag">React</span>
+          <span class="tag">Vite</span>
+          <span class="tag">Vercel</span>
+          <span class="tag">Postgres</span>
+          <span class="tag">JavaScript</span>
+        </div>
+      </article>
+
       <article class="project" id="library-management">
         <div class="project-header">
           <div>
             <h3>Library Management System</h3>
-            <p class="project-tagline">Books, members, and borrow/return in one CRUD app</p>
+            <p class="project-tagline">Role-based library app with auth, search, and CI-tested code</p>
           </div>
           <div class="project-links">
             <a href="https://github.com/DondieGatan/library-management-system" target="_blank" rel="noopener" class="btn btn-small">Source Code ↗</a>
@@ -117,15 +164,20 @@
         </div>
 
         <p class="project-desc">
-          A Flask app for running a small library: manage the book catalogue and member
-          roster, then check books in and out through a dedicated loans workflow that
+          A Flask app for running a small library, grown from a CRUD demo into a proper
+          role-based system: owner/admin/member permissions behind authentication, a
+          searchable book catalogue with auto-fetched covers, and a loans workflow that
           keeps available-copy counts and due dates consistent automatically.
         </p>
 
         <div class="project-gallery">
           <figure>
             <img src="assets/screenshots/library/dashboard.png" alt="Library Management System dashboard with book, member, and loan stats" loading="lazy">
-            <figcaption>Dashboard — live stats and active loans</figcaption>
+            <figcaption>Dashboard — live stats and a loans-over-time chart</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/library/books.png" alt="Library Management System book catalogue as a cover grid with search" loading="lazy">
+            <figcaption>Book catalogue — cover grid with auto-fetched descriptions</figcaption>
           </figure>
           <figure>
             <img src="assets/screenshots/library/loans.png" alt="Library Management System loans page with borrow form and loan history" loading="lazy">
@@ -134,11 +186,11 @@
         </div>
 
         <ul class="project-features">
-          <li>Full CRUD on books and members, each with live search</li>
-          <li>Borrowing decrements available copies and creates a loan record; returning reverses it</li>
-          <li>A book can't be borrowed once its available copies reach zero</li>
-          <li>Dashboard tracks titles, total copies, members, active loans, and overdue loans</li>
-          <li>Loan list filterable by status, with overdue rows visually flagged</li>
+          <li>Role-based access control — owner/admin/member — with CSRF protection and rate-limited login</li>
+          <li>Searchable book catalogue as a cover grid, with auto-fetched covers and descriptions</li>
+          <li>Borrow/return workflow that keeps available-copy counts and due dates consistent, with delete-guards against removing a book or member with an active loan</li>
+          <li>Dashboard with live stats, a loans-over-time chart, and CSV export for books and loans</li>
+          <li>Full pytest suite with GitHub Actions CI, plus a dark/light theme toggle</li>
         </ul>
 
         <div class="project-stack">
@@ -146,7 +198,8 @@
           <span class="tag">Flask</span>
           <span class="tag">SQLite</span>
           <span class="tag">Jinja2</span>
-          <span class="tag">HTML/CSS</span>
+          <span class="tag">pytest</span>
+          <span class="tag">GitHub Actions</span>
         </div>
       </article>
 

@@ -211,7 +211,7 @@
         <div class="project-header">
           <div>
             <h3>Expense Tracker</h3>
-            <p class="project-tagline">C# / ASP.NET Core MVC expense manager with EF Core</p>
+            <p class="project-tagline">Flask REST API + React Native mobile app, deployed to a real Android device</p>
           </div>
           <div class="project-links">
             <a href="https://github.com/DondieGatan/expense-tracker" target="_blank" rel="noopener" class="btn btn-small">Source Code ↗</a>
@@ -219,35 +219,46 @@
         </div>
 
         <p class="project-desc">
-          A personal expense tracker built in C# on ASP.NET Core MVC with Entity Framework
-          Core against SQL Server — full CRUD over logged expenses, category filtering, and
-          a dashboard that rolls everything up into totals and a spend-by-category breakdown.
+          A personal expense tracker rebuilt as a Flask JSON API (SQLAlchemy + JWT auth)
+          behind a React Native / Expo mobile app, deployed for real: the API runs on
+          Render against an Azure SQL database, and the app itself ships as an installable
+          Android APK via EAS Build — not just a localhost demo. Light/dark theming,
+          animated charts, swipe-to-delete, CSV export, and quick-add templates round out
+          the mobile UX.
         </p>
 
         <div class="project-gallery">
           <figure>
-            <img src="assets/screenshots/expense-tracker/dashboard.png" alt="Expense Tracker dashboard with totals and category breakdown" loading="lazy">
-            <figcaption>Dashboard — totals and category breakdown</figcaption>
+            <img src="assets/screenshots/expense-tracker/login.png" alt="Expense Tracker mobile app login screen in dark theme" loading="lazy">
+            <figcaption>Login — dark-green fintech theme</figcaption>
           </figure>
           <figure>
-            <img src="assets/screenshots/expense-tracker/expenses.png" alt="Expense Tracker expense list with category filters" loading="lazy">
-            <figcaption>Expense list with category filters</figcaption>
+            <img src="assets/screenshots/expense-tracker/dashboard.png" alt="Expense Tracker dashboard with budget progress, recent expenses, and a category breakdown chart" loading="lazy">
+            <figcaption>Dashboard — budget tracking, recent expenses, category chart</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/expense-tracker/add-expense.png" alt="Expense Tracker add expense form with quick-add templates and category chips, shown in light theme" loading="lazy">
+            <figcaption>Add expense — quick-add templates, light theme</figcaption>
           </figure>
         </div>
 
         <ul class="project-features">
-          <li>Create, edit, and delete expenses with server-side model validation</li>
-          <li>Filter the expense list by category</li>
-          <li>Dashboard aggregates total spent, this month's spend, and a per-category breakdown</li>
-          <li>Code-First EF Core migrations against SQL Server, applied automatically on startup</li>
+          <li>JWT-authenticated Flask REST API (SQLAlchemy + Flask-Migrate) against Azure SQL, deployed on Render with a Dockerized ODBC driver</li>
+          <li>React Native / Expo mobile app — bottom-tab navigation, animated dashboard charts, category filtering, budget tracking</li>
+          <li>Light/dark theme with persisted preference, swipe-to-delete, CSV export, pull-to-refresh, and haptic feedback</li>
+          <li>Real Android APK built and distributed via EAS Build, not just an Expo Go preview</li>
+          <li>CORS allowlist and per-endpoint rate limiting on auth routes; pytest suite covering auth, ownership isolation, and CRUD</li>
         </ul>
 
         <div class="project-stack">
-          <span class="tag">C#</span>
-          <span class="tag">ASP.NET Core MVC</span>
-          <span class="tag">Entity Framework Core</span>
-          <span class="tag">SQL Server</span>
-          <span class="tag">Razor</span>
+          <span class="tag">Flask</span>
+          <span class="tag">SQLAlchemy</span>
+          <span class="tag">JWT</span>
+          <span class="tag">React Native</span>
+          <span class="tag">Expo</span>
+          <span class="tag">Azure SQL</span>
+          <span class="tag">Render</span>
+          <span class="tag">pytest</span>
         </div>
       </article>
 

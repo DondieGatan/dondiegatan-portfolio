@@ -152,6 +152,54 @@
         </div>
       </article>
 
+      <article class="project" id="floss-clinic">
+        <div class="project-header">
+          <div>
+            <h3>Floss Clinic</h3>
+            <p class="project-tagline">Dental clinic platform with real conflict-safe booking and a cited RAG chatbot</p>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/DondieGatan/floss" target="_blank" rel="noopener" class="btn btn-small">Source Code ↗</a>
+          </div>
+        </div>
+
+        <p class="project-desc">
+          A full-stack dental clinic platform — appointment booking with genuine double-booking
+          prevention, a staff-managed doctor directory, patient records with role-based access, and
+          a retrieval-augmented chatbot that only ever answers from the clinic's own cited
+          documents and refuses to give medical advice. 126 tests (112 backend, 14 frontend) and a
+          CI pipeline running both suites on every push.
+        </p>
+
+        <div class="project-gallery">
+          <figure>
+            <img src="assets/screenshots/floss-clinic/home.png" alt="Floss Clinic homepage hero" loading="lazy">
+            <figcaption>Homepage</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/floss-clinic/chat.png" alt="Floss Clinic cited chat assistant" loading="lazy">
+            <figcaption>Cited chat assistant</figcaption>
+          </figure>
+        </div>
+
+        <ul class="project-features">
+          <li>Appointment booking that rejects real conflicts via a half-open interval check, enforced at the database with a partial unique index — not just an application-level check</li>
+          <li>A RAG chatbot grounded in the clinic's own documents (sentence-transformer embeddings, cosine retrieval, a confidence threshold below which it says "I don't know" instead of guessing), streamed token-by-token with inline citations</li>
+          <li>An auto-regenerating "Dentist & Department Directory" document, so the chatbot's knowledge base never goes stale when staff update the directory</li>
+          <li>Role-based access (patient / staff / admin) as a signed JWT claim, refreshed on token refresh so a role change takes effect on next login</li>
+          <li>112 backend tests + 14 frontend tests, GitHub Actions CI on every push</li>
+        </ul>
+
+        <div class="project-stack">
+          <span class="tag">Python</span>
+          <span class="tag">Flask</span>
+          <span class="tag">SQLAlchemy</span>
+          <span class="tag">React</span>
+          <span class="tag">Vite</span>
+          <span class="tag">sentence-transformers</span>
+        </div>
+      </article>
+
       <article class="project" id="library-management">
         <div class="project-header">
           <div>

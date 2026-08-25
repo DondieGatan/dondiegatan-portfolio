@@ -259,20 +259,21 @@
         <div class="project-header">
           <div>
             <h3>Expense Tracker</h3>
-            <p class="project-tagline">Flask REST API + React Native mobile app, deployed to a real Android device</p>
+            <p class="project-tagline">Flask REST API + React Native app, deployed to Android and the web</p>
           </div>
           <div class="project-links">
+            <a href="https://expense-tracker-web-rosy.vercel.app" target="_blank" rel="noopener" class="btn btn-small btn-primary">Live Demo ↗</a>
             <a href="https://github.com/DondieGatan/expense-tracker" target="_blank" rel="noopener" class="btn btn-small">Source Code ↗</a>
           </div>
         </div>
 
         <p class="project-desc">
           A personal expense tracker rebuilt as a Flask JSON API (SQLAlchemy + JWT auth)
-          behind a React Native / Expo mobile app, deployed for real: the API runs on
-          Render against an Azure SQL database, and the app itself ships as an installable
-          Android APK via EAS Build — not just a localhost demo. Light/dark theming,
-          animated charts, swipe-to-delete, CSV export, and quick-add templates round out
-          the mobile UX.
+          behind a React Native / Expo app, deployed for real: the API runs on Render
+          against an Azure SQL database, the web build is deployed on Vercel, and the
+          app itself also ships as an installable Android APK via EAS Build — not just
+          a localhost demo. Light/dark theming, animated charts, swipe-to-delete, CSV
+          export, and quick-add templates round out the UX.
         </p>
 
         <div class="project-gallery">
@@ -295,6 +296,7 @@
           <li>React Native / Expo mobile app — bottom-tab navigation, animated dashboard charts, category filtering, budget tracking</li>
           <li>Light/dark theme with persisted preference, swipe-to-delete, CSV export, pull-to-refresh, and haptic feedback</li>
           <li>Real Android APK built and distributed via EAS Build, not just an Expo Go preview</li>
+          <li>Web build (Expo for Web) deployed on Vercel, hitting the same Flask API through a locked-down CORS allowlist</li>
           <li>CORS allowlist and per-endpoint rate limiting on auth routes; pytest suite covering auth, ownership isolation, and CRUD</li>
         </ul>
 
@@ -306,6 +308,7 @@
           <span class="tag">Expo</span>
           <span class="tag">Azure SQL</span>
           <span class="tag">Render</span>
+          <span class="tag">Vercel</span>
           <span class="tag">pytest</span>
         </div>
       </article>

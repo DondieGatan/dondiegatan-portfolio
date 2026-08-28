@@ -190,17 +190,25 @@ img { max-width: 100%; display: block; }
   color: var(--text-muted);
   font-size: 1.05rem;
   max-width: 640px;
-  margin: 0 0 32px;
+  margin: 0 0 14px;
+}
+
+.hero-education {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  max-width: 640px;
+  margin: 0 0 28px;
 }
 
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
 
-.hero .eyebrow, .hero h1, .hero-sub, .hero-actions {
+.hero .eyebrow, .hero h1, .hero-sub, .hero-education, .hero-actions {
   animation: fadeUp 0.7s ease both;
 }
 
 .hero h1 { animation-delay: 0.05s; }
 .hero-sub { animation-delay: 0.15s; }
+.hero-education { animation-delay: 0.2s; }
 .hero-actions { animation-delay: 0.25s; }
 
 @keyframes fadeUp {
@@ -210,7 +218,7 @@ img { max-width: 100%; display: block; }
 
 @media (prefers-reduced-motion: reduce) {
   .hero::before { animation: none; }
-  .hero .eyebrow, .hero h1, .hero-sub, .hero-actions { animation: none; }
+  .hero .eyebrow, .hero h1, .hero-sub, .hero-education, .hero-actions { animation: none; }
 }
 
 .btn {

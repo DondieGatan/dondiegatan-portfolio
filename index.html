@@ -76,32 +76,40 @@
         </div>
 
         <p class="project-desc">
-          A full-stack Flask web application that takes a candidate's PDF or scanned-image resume,
-          extracts its text with OCR and PDF parsing, and analyses it with NLP to produce a scored,
+          A full-stack Flask application that takes a candidate's PDF or scanned-image resume,
+          extracts its text via OCR and PDF parsing, and analyses it with NLP to produce a scored,
           section-by-section breakdown — skills, education, experience, and formatting — with an
           ATS-compatibility check and concrete suggestions for improvement. It also matches a resume
-          against a pasted job description, generates personalised career feedback, and includes a
-          guided resume builder and an analytics dashboard summarising every resume analysed so far.
-          Deployed on Render's free tier against an isolated Azure SQL schema — the first request
-          after a period of inactivity can take up to a minute to wake the instance.
+          against a pasted job description, generates personalised career feedback, and surfaces
+          trends across every resume analysed on an analytics dashboard. A guided resume builder lets
+          users compose one from scratch with structured, repeatable work-experience and education
+          entries, an in-app AI assistant (Google Gemini) that reviews the draft for gaps and rewrites
+          weak sections on request, and one-click export to a genuinely ATS-parseable PDF with real
+          embedded text rather than a rasterised image. Deployed on Render's free tier against an
+          isolated Azure SQL schema — the first request after a period of inactivity can take up to a
+          minute to wake the instance.
         </p>
 
         <div class="project-gallery">
           <figure>
-            <img src="assets/screenshots/home_upload.png" alt="Smart Resume Analyser upload screen with feature overview" loading="lazy">
+            <img src="assets/screenshots/home_upload.webp" alt="Smart Resume Analyser upload screen with feature overview" loading="lazy">
             <figcaption>Upload &amp; feature overview</figcaption>
           </figure>
           <figure>
-            <img src="assets/screenshots/builder.png" alt="Smart Resume Analyser resume builder page" loading="lazy">
-            <figcaption>Guided resume builder</figcaption>
+            <img src="assets/screenshots/result.webp" alt="Smart Resume Analyser scored analysis result with employer summary and section breakdown" loading="lazy">
+            <figcaption>Scored analysis &amp; employer summary</figcaption>
           </figure>
           <figure>
-            <img src="assets/screenshots/login.png" alt="Smart Resume Analyser login screen" loading="lazy">
+            <img src="assets/screenshots/dashboard.webp" alt="Smart Resume Analyser analytics dashboard with score distribution and ATS breakdown" loading="lazy">
+            <figcaption>Analytics dashboard</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/history.webp" alt="Smart Resume Analyser resume history list" loading="lazy">
+            <figcaption>Resume history</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/login.webp" alt="Smart Resume Analyser login screen" loading="lazy">
             <figcaption>Authentication</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/screenshots/register.png" alt="Smart Resume Analyser account creation screen" loading="lazy">
-            <figcaption>Account creation</figcaption>
           </figure>
         </div>
 
@@ -111,6 +119,8 @@
           <li>ATS-compatibility simulation with a transparent, explainable scoring breakdown</li>
           <li>Job-description matching to rank a resume's fit against a specific role</li>
           <li>Personalised feedback generation based on career goal, experience level, and target role</li>
+          <li>Guided resume builder with an in-app AI assistant (Google Gemini) that flags gaps in the draft and applies suggested rewrites in one click</li>
+          <li>Native-text PDF export — real embedded text via direct PDF drawing, not a rasterised image, so builder output is actually machine-readable by real ATS software</li>
           <li>Auth system with email-based password reset (Flask-Mail) and per-user history</li>
           <li>Analytics dashboard (score distribution, top skills, career-field breakdown) with CSV/JSON export for Power BI</li>
         </ul>
@@ -122,6 +132,7 @@
           <span class="tag">NLTK</span>
           <span class="tag">PyMuPDF</span>
           <span class="tag">Tesseract OCR</span>
+          <span class="tag">Google Gemini API</span>
           <span class="tag">Docker</span>
           <span class="tag">Render</span>
           <span class="tag">HTML/CSS/JS</span>

@@ -240,8 +240,8 @@
           <li>Appointment booking that rejects real conflicts via a half-open interval check, enforced at the database with a partial unique index — not just an application-level check</li>
           <li>A RAG chatbot grounded in the clinic's own documents (sentence-transformer embeddings, cosine retrieval, a confidence threshold below which it says "I don't know" instead of guessing), streamed token-by-token</li>
           <li>An auto-regenerating "Dentist & Department Directory" document, chunked one entity at a time so retrieval doesn't dilute across multiple doctors — the chatbot's knowledge base never goes stale when staff update the directory</li>
-          <li>Role-based access (patient / staff / admin) as a signed JWT claim, refreshed on token refresh so a role change takes effect on next login</li>
-          <li>332 tests (233 backend + 99 frontend), GitHub Actions CI on every push</li>
+          <li>Role-based access (patient / staff / admin / owner) as a signed JWT claim, refreshed on token refresh so a role change takes effect on next login</li>
+          <li>374 tests (264 backend + 110 frontend), GitHub Actions CI on every push</li>
         </ul>
 
         <div class="project-stack">

@@ -86,8 +86,8 @@
           entries, an in-app AI assistant (Google Gemini) that reviews the draft for gaps and rewrites
           weak sections on request, and one-click export to a genuinely ATS-parseable PDF with real
           embedded text rather than a rasterised image. Deployed on Render's free tier against an
-          isolated Azure SQL schema — the first request after a period of inactivity can take up to a
-          minute to wake the instance.
+          isolated Postgres schema (Neon) — the first request after a period of inactivity can take
+          up to a minute to wake the instance.
         </p>
 
         <div class="project-gallery">
@@ -128,7 +128,7 @@
         <div class="project-stack">
           <span class="tag">Python</span>
           <span class="tag">Flask</span>
-          <span class="tag">Azure SQL</span>
+          <span class="tag">Postgres</span>
           <span class="tag">NLTK</span>
           <span class="tag">PyMuPDF</span>
           <span class="tag">Tesseract OCR</span>
@@ -327,9 +327,9 @@
         <p class="project-desc">
           A personal expense tracker rebuilt as a Flask JSON API (SQLAlchemy + JWT auth)
           behind a React Native / Expo (TypeScript) app, deployed for real: the API runs
-          on Render against an Azure SQL database, the web build is deployed on Vercel, and
-          the app itself also ships as an installable Android APK via EAS Build — not just
-          a localhost demo. Light/dark theming, animated charts, a SendGrid-backed
+          on Render against a Postgres database (Neon), the web build is deployed on Vercel,
+          and the app itself also ships as an installable Android APK via EAS Build — not
+          just a localhost demo. Light/dark theming, animated charts, a SendGrid-backed
           forgot-password flow, CSV export, and quick-add templates round out the UX.
         </p>
 
@@ -361,7 +361,7 @@
         </div>
 
         <ul class="project-features">
-          <li>JWT-authenticated Flask REST API (SQLAlchemy + Flask-Migrate) against Azure SQL, deployed on Render with a Dockerized ODBC driver</li>
+          <li>JWT-authenticated Flask REST API (SQLAlchemy + Flask-Migrate) against Postgres, deployed on Render via Docker</li>
           <li>React Native / Expo mobile app — bottom-tab navigation, animated dashboard charts, category filtering, budget tracking</li>
           <li>Per-user currency preference (12 ISO 4217 codes) persisted server-side, driving every amount shown across the app</li>
           <li>Light/dark theme with persisted preference, swipe-to-delete on native (a dedicated delete action on web), CSV export, pull-to-refresh, and haptic feedback</li>
@@ -378,7 +378,7 @@
           <span class="tag">React Native</span>
           <span class="tag">Expo</span>
           <span class="tag">TypeScript</span>
-          <span class="tag">Azure SQL</span>
+          <span class="tag">Postgres</span>
           <span class="tag">Render</span>
           <span class="tag">Vercel</span>
           <span class="tag">pytest</span>
@@ -407,7 +407,7 @@
         </div>
         <div class="skill-group reveal">
           <h4>Data &amp; Documents</h4>
-          <p>SQL Server (pyodbc, Entity Framework Core), SQLite, PyMuPDF, Tesseract OCR, CSV/JSON export, Power BI integration</p>
+          <p>Postgres (psycopg), SQL Server (pyodbc, Entity Framework Core), SQLite, PyMuPDF, Tesseract OCR, CSV/JSON export, Power BI integration</p>
         </div>
         <div class="skill-group reveal">
           <h4>Tools</h4>

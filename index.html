@@ -155,7 +155,7 @@
         <p class="project-desc">
           A production website for a real cafe business — a React/Vite frontend backed by
           Vercel serverless functions and a Postgres order log, with an admin dashboard for
-          managing incoming orders, a live Google Reviews sync, and full SEO/PWA setup.
+          managing incoming orders and per-drink availability, and full SEO/PWA setup.
           Deployed and actually in use, not just a demo.
         </p>
 
@@ -165,16 +165,16 @@
             <figcaption>Homepage — menu and ordering flow</figcaption>
           </figure>
           <figure>
-            <img src="assets/screenshots/mori-matcha/feedback.png" alt="Mori Matcha customer feedback section with live Google reviews" loading="lazy">
-            <figcaption>Customer feedback — live Google Reviews sync</figcaption>
+            <img src="assets/screenshots/mori-matcha/feedback.png" alt="Mori Matcha customer feedback section with curated reviews" loading="lazy">
+            <figcaption>Customer feedback section</figcaption>
           </figure>
         </div>
 
         <ul class="project-features">
           <li>Cart-based ordering flow that writes to a Postgres order log via Vercel serverless functions, with rate limiting on submission</li>
           <li>Admin dashboard for managing order status, with CSV export</li>
-          <li>Live Google Places reviews sync merged with a curated fallback list, so real reviews show up as soon as Google surfaces them without ever leaving the section empty</li>
-          <li>Per-drink low-stock / sold-out toggling and Vercel Analytics</li>
+          <li>Curated customer reviews section</li>
+          <li>Tri-state per-drink availability (available / unavailable / coming soon) managed from the admin panel, plus Vercel Analytics</li>
           <li>Full SEO/PWA setup — meta tags, JSON-LD, installable manifest</li>
         </ul>
 

@@ -161,8 +161,12 @@
 
         <div class="project-gallery">
           <figure>
-            <img src="assets/screenshots/mori-matcha/home.jpg" alt="Mori Matcha homepage hero and menu section" loading="lazy">
-            <figcaption>Homepage — menu and ordering flow</figcaption>
+            <img src="assets/screenshots/mori-matcha/home.jpg" alt="Mori Matcha homepage hero and menu section with featured drinks and coming-soon items" loading="lazy">
+            <figcaption>Homepage — featured drinks and menu</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/mori-matcha/cart-flow.png" alt="Mori Matcha cart showing a numbered How Ordering Works guide before checkout" loading="lazy">
+            <figcaption>Cart — step-by-step ordering guide</figcaption>
           </figure>
           <figure>
             <img src="assets/screenshots/mori-matcha/feedback.png" alt="Mori Matcha customer feedback section with live Google reviews" loading="lazy">
@@ -171,8 +175,8 @@
         </div>
 
         <ul class="project-features">
-          <li>Cart-based ordering flow that writes to a Postgres order log via Vercel serverless functions, with rate limiting on submission</li>
-          <li>Admin dashboard for managing order status, with CSV export</li>
+          <li>Cart-based ordering flow with a built-in step-by-step guide, writing to a Postgres order log via Vercel serverless functions with rate limiting on submission</li>
+          <li>Admin dashboard for managing order status, with CSV export and a recoverable trash bin for deleted orders</li>
           <li>Live Google Places reviews sync merged with a curated fallback list, capped and text-clamped to keep the section a tidy row of highlights</li>
           <li>Tri-state per-drink availability (available / unavailable / coming soon) managed from the admin panel, plus Vercel Analytics</li>
           <li>Full SEO/PWA setup — meta tags, JSON-LD, installable manifest</li>

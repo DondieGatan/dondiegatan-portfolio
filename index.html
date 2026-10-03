@@ -209,7 +209,7 @@
           prevention, automatic confirmation and reminder emails, a staff-managed doctor directory,
           patient records with role-based access, and a retrieval-augmented chatbot that only ever
           answers from the clinic's own documents and refuses to give medical advice. Deployed live
-          (Vercel + Render), with 374 tests (264 backend, 110 frontend) and a CI pipeline running
+          (Vercel + Render), with 382 tests (268 backend, 114 frontend) and a CI pipeline running
           both suites on every push.
         </p>
 
@@ -245,7 +245,7 @@
           <li>A RAG chatbot grounded in the clinic's own documents (sentence-transformer embeddings, cosine retrieval, a confidence threshold below which it says "I don't know" instead of guessing), streamed token-by-token</li>
           <li>An auto-regenerating "Dentist & Department Directory" document, chunked one entity at a time so retrieval doesn't dilute across multiple doctors — the chatbot's knowledge base never goes stale when staff update the directory</li>
           <li>Role-based access (patient / staff / admin / owner) as a signed JWT claim, refreshed on token refresh so a role change takes effect on next login</li>
-          <li>374 tests (264 backend + 110 frontend), GitHub Actions CI on every push</li>
+          <li>382 tests (268 backend + 114 frontend), GitHub Actions CI on every push</li>
         </ul>
 
         <div class="project-stack">

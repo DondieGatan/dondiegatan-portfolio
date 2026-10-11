@@ -574,6 +574,12 @@ html.theme-fade, html.theme-fade *, html.theme-fade *::before, html.theme-fade *
   .nav-links a { font-size: 0.72rem; padding: 6px 5px; }
 }
 
+/* Very small phones (320-350px): let the nav links wrap instead of spilling out of the pill */
+@media (max-width: 350px) {
+  .nav-links { flex-wrap: wrap; justify-content: center; row-gap: 2px; }
+  .nav-links a { font-size: 0.78rem; padding: 6px 9px; }
+}
+
 /* =========================================================
    Reduced motion: no loader, no ambient animation
    ========================================================= */

@@ -43,14 +43,14 @@
 /* ---- Page themes: every page has its own palette ---- */
 body[data-page="home"] { --accent: #7c6cf6; --accent-2: #4fd1c5; }
 
-body[data-page="profile"] { --bg: #0e0a12; --bg-alt: #130d18; --surface-solid: #1a1220; --accent: #f472b6; --accent-2: #fbbf24; }
+body[data-page="profile"] { --bg: #060a14; --bg-alt: #0a1020; --surface-solid: #0e1626; --accent: #3b82f6; --accent-2: #22d3ee; }
 body[data-page="projects"] { --bg: #070d17; --bg-alt: #0a1220; --surface-solid: #0e1829; --accent: #38bdf8; --accent-2: #818cf8; }
 body[data-page="skills"] { --bg: #06110e; --bg-alt: #09160f; --surface-solid: #0c1a14; --accent: #34d399; --accent-2: #a3e635; }
 body[data-page="contact"] { --bg: #0c0a15; --bg-alt: #110d1d; --surface-solid: #161024; --accent: #a78bfa; --accent-2: #fb7185; }
 
 @media (prefers-color-scheme: light) {
   body[data-page="home"] { --accent: #5b3df0; --accent-2: #0e9488; }
-  body[data-page="profile"] { --bg: #fdf6f9; --bg-alt: #ffffff; --surface-solid: #ffffff; --accent: #db2777; --accent-2: #d97706; }
+  body[data-page="profile"] { --bg: #f2f6fd; --bg-alt: #ffffff; --surface-solid: #ffffff; --accent: #2563eb; --accent-2: #0891b2; }
   body[data-page="projects"] { --bg: #f2f8fd; --bg-alt: #ffffff; --surface-solid: #ffffff; --accent: #0284c7; --accent-2: #4f46e5; }
   body[data-page="skills"] { --bg: #f1faf5; --bg-alt: #ffffff; --surface-solid: #ffffff; --accent: #059669; --accent-2: #65a30d; }
   body[data-page="contact"] { --bg: #f7f4fd; --bg-alt: #ffffff; --surface-solid: #ffffff; --accent: #7c3aed; --accent-2: #e11d48; }

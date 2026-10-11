@@ -577,32 +577,48 @@ html.theme-fade, html.theme-fade *, html.theme-fade *::before, html.theme-fade *
 .showcase-title { font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -0.03em; margin: 0 0 16px; }
 .showcase-sub { color: var(--text-muted); max-width: 560px; margin: 0 auto; font-size: 1.05rem; }
 
-.stage { position: relative; max-width: var(--max-width); height: 450px; margin: 56px auto 0; perspective: 1600px; }
-.frame {
-  position: absolute; display: block; overflow: hidden; border-radius: 14px; text-decoration: none;
-  border: 1px solid var(--border); background: var(--surface-solid); box-shadow: var(--shadow-lg);
-  transition: transform 0.55s cubic-bezier(.2, .7, .2, 1), box-shadow 0.4s ease, border-color 0.3s ease, opacity 0.3s ease;
+/* Swipeable project carousel (coverflow) */
+.carousel { max-width: var(--max-width); margin: 52px auto 0; }
+.car-stage {
+  position: relative; height: 440px; perspective: 1700px; touch-action: pan-y; cursor: grab;
+  user-select: none; -webkit-user-select: none; outline: none; border-radius: 18px;
 }
+.car-stage:active { cursor: grabbing; }
+.car-stage:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 6px; }
+.slide {
+  position: absolute; left: 50%; top: 10px; display: block; width: min(640px, 62%); height: calc(100% - 20px);
+  overflow: hidden; border-radius: 14px; text-decoration: none; backface-visibility: hidden; will-change: transform, opacity;
+  border: 1px solid var(--border); background: var(--surface-solid); box-shadow: var(--shadow-lg);
+  transition: border-color 0.3s ease;
+}
+.slide.is-active { border-color: color-mix(in srgb, var(--accent) 50%, var(--border)); }
 .fbar { display: flex; gap: 6px; padding: 10px 14px; border-bottom: 1px solid var(--border); }
 .fbar i { width: 9px; height: 9px; border-radius: 50%; background: color-mix(in srgb, var(--text-muted) 45%, transparent); }
-.fimg { width: 100%; height: calc(100% - 30px); object-fit: cover; object-position: top; display: block; }
-.fr-c { left: 50%; top: 0; width: min(660px, 62%); height: 430px; transform: translateX(-50%); z-index: 3; }
-.fr-l { left: 0; top: 64px; width: 41%; height: 296px; transform: rotateY(24deg) rotateZ(-2deg); opacity: 0.92; transform-origin: right center; }
-.fr-r { right: 0; top: 64px; width: 41%; height: 296px; transform: rotateY(-24deg) rotateZ(2deg); opacity: 0.92; transform-origin: left center; }
-.fr-c:hover { transform: translateX(-50%) translateY(-10px); border-color: color-mix(in srgb, var(--accent) 55%, var(--border)); }
-.stage:hover .fr-l { transform: rotateY(14deg) rotateZ(-1deg) translateX(14px); }
-.stage:hover .fr-r { transform: rotateY(-14deg) rotateZ(1deg) translateX(-14px); }
-.fr-l:hover, .fr-r:hover { opacity: 1; border-color: color-mix(in srgb, var(--accent) 55%, var(--border)); }
+.fimg { width: 100%; height: calc(100% - 30px); object-fit: cover; object-position: top; display: block; pointer-events: none; }
 
-.stage-tag {
-  position: absolute; z-index: 9; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap;
-  padding: 8px 14px; border-radius: 999px; font-size: 0.8rem; font-weight: 600; color: var(--accent-2);
-  background: color-mix(in srgb, var(--surface-solid) 92%, transparent); border: 1px solid color-mix(in srgb, var(--accent-2) 50%, var(--border));
+.car-caption { text-align: center; margin: 26px auto 0; max-width: 640px; min-height: 150px; }
+.cap-live { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 8px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent-2); }
+.cap-title { margin: 0 0 6px; font-size: 1.5rem; letter-spacing: -0.02em; }
+.cap-sub { margin: 0 auto 16px; color: var(--text-muted); max-width: 520px; }
+.cap-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.car-caption.swap .cap-title, .car-caption.swap .cap-sub, .car-caption.swap .cap-actions { animation: capIn 0.45s cubic-bezier(.2, .7, .2, 1) both; }
+@keyframes capIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+.car-ctl { display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 10px; }
+.car-btn {
+  width: 42px; height: 42px; border-radius: 50%; cursor: pointer; display: grid; place-items: center; padding: 0 0 3px;
+  font-size: 1.5rem; line-height: 1; color: var(--text); font-family: inherit;
+  border: 1px solid var(--border); background: color-mix(in srgb, var(--surface-solid) 60%, transparent);
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
-.st-c { left: 50%; top: -14px; transform: translateX(-50%); }
-.st-l { left: 3%; top: 26px; }
-.st-r { right: 3%; top: 26px; }
+.car-btn:hover { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); transform: scale(1.08); }
+.car-btn:active { transform: scale(0.93); }
+.car-dots { display: flex; gap: 8px; align-items: center; }
+.car-dot { width: 9px; height: 9px; padding: 0; border-radius: 999px; border: 0; cursor: pointer; background: color-mix(in srgb, var(--text-muted) 45%, transparent); transition: width 0.3s ease, background 0.3s ease; }
+.car-dot:hover { background: var(--accent-2); }
+.car-dot.is-active { width: 26px; background: linear-gradient(90deg, var(--accent), var(--accent-2)); }
 .showcase-cta { text-align: center; margin-top: 44px; }
+
 
 @media (max-width: 1180px) {
   .fl-1 { left: -22px; } .fl-2 { right: -14px; } .fl-3 { left: -18px; } .fl-4 { right: -8px; }
@@ -613,11 +629,14 @@ html.theme-fade, html.theme-fade *, html.theme-fade *::before, html.theme-fade *
   .fl-1 { left: 8px; } .fl-2 { right: 8px; } .fl-3 { left: 8px; } .fl-4 { right: 8px; }
 }
 @media (max-width: 900px) {
-  .stage { height: auto; margin-top: 40px; perspective: none; }
-  .fr-c { position: relative; left: auto; top: auto; width: 100%; height: auto; aspect-ratio: 16 / 10; transform: none; }
-  .fr-c:hover { transform: translateY(-6px); }
-  .fr-l, .fr-r, .st-l, .st-r { display: none; }
-  .st-c { top: -14px; }
+  .car-stage { height: 360px; }
+  .slide { width: min(520px, 78%); }
+}
+@media (max-width: 640px) {
+  .car-stage { height: 260px; }
+  .slide { width: 84%; top: 4px; height: calc(100% - 8px); }
+  .car-caption { min-height: 170px; margin-top: 18px; }
+  .cap-title { font-size: 1.3rem; }
 }
 @media (max-width: 640px) {
   .stack-line { font-size: 1rem; gap: 6px 18px; }

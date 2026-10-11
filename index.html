@@ -95,26 +95,55 @@
     <div class="showcase-head">
       <p class="section-eyebrow reveal">Selected work</p>
       <h2 class="showcase-title reveal" id="showcase-h">Five live projects. <span class="grad">Real users, real data, real deploys.</span></h2>
-      <p class="showcase-sub reveal">These are things you can open and use right now.</p>
+      <p class="showcase-sub reveal">Drag or swipe through them. Everything here is live and works right now.</p>
     </div>
-    <div class="stage reveal">
-      <a class="frame fr-l" href="projects.html#floss-clinic" aria-label="Floss Clinic: dental clinic platform">
-        <div class="fbar"><i></i><i></i><i></i></div>
-        <img class="fimg" src="assets/screenshots/floss-clinic/staff-dashboard.webp" alt="Floss Clinic staff dashboard" width="1200" height="800" loading="lazy">
-      </a>
-      <a class="frame fr-r" href="projects.html#resume-analyser" aria-label="Smart Resume Analyser">
-        <div class="fbar"><i></i><i></i><i></i></div>
-        <img class="fimg" src="assets/screenshots/result.webp" alt="Smart Resume Analyser scored result" width="1200" height="800" loading="lazy">
-      </a>
-      <a class="frame fr-c" href="projects.html#mori-matcha" aria-label="Mori Matcha: live cafe website">
-        <div class="fbar"><i></i><i></i><i></i></div>
-        <img class="fimg" src="assets/screenshots/mori-matcha/home.jpg" alt="Mori Matcha homepage" width="1200" height="800" loading="lazy">
-      </a>
-      <span class="stage-tag st-c"><i class="dot" aria-hidden="true"></i>Live · Mori Matcha</span>
-      <span class="stage-tag st-l">Floss Clinic</span>
-      <span class="stage-tag st-r">Resume Analyser</span>
+
+    <div class="carousel reveal" id="carousel" role="region" aria-roledescription="carousel" aria-label="Featured projects">
+      <div class="car-stage" tabindex="0" aria-label="Project carousel. Use the left and right arrow keys, or drag, to change project.">
+        <a class="slide" href="projects.html#floss-clinic" data-id="floss-clinic" data-title="Floss Clinic" data-sub="Dental clinic platform with real conflict-safe booking and a grounded RAG chatbot" data-live="https://floss-beta.vercel.app" draggable="false" aria-label="Floss Clinic">
+          <div class="fbar"><i></i><i></i><i></i></div>
+          <img class="fimg" src="assets/screenshots/floss-clinic/staff-dashboard.webp" alt="Floss Clinic staff dashboard" width="1200" height="800" draggable="false" loading="eager">
+        </a>
+        <a class="slide" href="projects.html#mori-matcha" data-id="mori-matcha" data-title="Mori Matcha" data-sub="Live cafe website with a real ordering and admin backend" data-live="https://mori-matcha-inky.vercel.app" draggable="false" aria-label="Mori Matcha">
+          <div class="fbar"><i></i><i></i><i></i></div>
+          <img class="fimg" src="assets/screenshots/mori-matcha/home.jpg" alt="Mori Matcha homepage" width="1200" height="800" draggable="false" loading="eager">
+        </a>
+        <a class="slide" href="projects.html#resume-analyser" data-id="resume-analyser" data-title="Smart Resume Analyser" data-sub="AI-assisted resume scoring, feedback, and job-matching platform" data-live="https://smart-resume-analyser-z09z.onrender.com" draggable="false" aria-label="Smart Resume Analyser">
+          <div class="fbar"><i></i><i></i><i></i></div>
+          <img class="fimg" src="assets/screenshots/result.webp" alt="Smart Resume Analyser scored result" width="1200" height="800" draggable="false" loading="eager">
+        </a>
+        <a class="slide" href="projects.html#library-management" data-id="library-management" data-title="Library Management System" data-sub="Role-based library app with auth, search, and CI-tested code" data-live="https://library-management-system-s4ys.onrender.com" draggable="false" aria-label="Library Management System">
+          <div class="fbar"><i></i><i></i><i></i></div>
+          <img class="fimg" src="assets/screenshots/library/dashboard.webp" alt="Library Management System dashboard" width="1200" height="800" draggable="false" loading="lazy">
+        </a>
+        <a class="slide" href="projects.html#expense-tracker" data-id="expense-tracker" data-title="Expense Tracker" data-sub="Flask REST API + React Native (TypeScript) app, deployed to Android and the web" data-live="https://expense-tracker-web-rosy.vercel.app" draggable="false" aria-label="Expense Tracker">
+          <div class="fbar"><i></i><i></i><i></i></div>
+          <img class="fimg" src="assets/screenshots/expense-tracker/dashboard.webp" alt="Expense Tracker dashboard" width="1200" height="800" draggable="false" loading="lazy">
+        </a>
+      </div>
+      <div class="car-caption" aria-live="polite">
+        <p class="cap-live"><i class="dot" aria-hidden="true"></i>Live project</p>
+        <h3 class="cap-title">Mori Matcha</h3>
+        <p class="cap-sub"></p>
+        <div class="cap-actions">
+          <a class="btn btn-primary btn-small cap-demo" href="#" target="_blank" rel="noopener">Live Demo ↗</a>
+          <a class="btn btn-small cap-more" href="projects.html">Project details</a>
+        </div>
+      </div>
+      <div class="car-ctl">
+        <button class="car-btn car-prev" type="button" aria-label="Previous project">‹</button>
+        <div class="car-dots">
+          <button class="car-dot" type="button" aria-label="Show Floss Clinic"></button>
+          <button class="car-dot" type="button" aria-label="Show Mori Matcha"></button>
+          <button class="car-dot" type="button" aria-label="Show Smart Resume Analyser"></button>
+          <button class="car-dot" type="button" aria-label="Show Library Management System"></button>
+          <button class="car-dot" type="button" aria-label="Show Expense Tracker"></button>
+        </div>
+        <button class="car-btn car-next" type="button" aria-label="Next project">›</button>
+      </div>
     </div>
-    <div class="showcase-cta reveal"><a href="projects.html" class="btn btn-primary">Explore all projects →</a></div>
+
+    <div class="showcase-cta reveal"><a href="projects.html" class="btn btn-ghost">Explore all projects →</a></div>
   </section>
 
   <section class="section">

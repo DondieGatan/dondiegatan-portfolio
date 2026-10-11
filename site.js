@@ -145,6 +145,134 @@
     });
   });
 
+
+  /* ---------- Swipeable project carousel (home page) ---------- */
+  (function initCarousel() {
+    var wrap = document.getElementById('carousel');
+    if (!wrap) return;
+    var stage = wrap.querySelector('.car-stage');
+    var slides = [].slice.call(wrap.querySelectorAll('.slide'));
+    var dots = [].slice.call(wrap.querySelectorAll('.car-dot'));
+    var cap = wrap.querySelector('.car-caption');
+    var capTitle = cap.querySelector('.cap-title'), capSub = cap.querySelector('.cap-sub');
+    var capDemo = cap.querySelector('.cap-demo'), capMore = cap.querySelector('.cap-more');
+    var n = slides.length;
+    var START = 1;                         // Mori Matcha in the centre to begin with
+    var pos = START, target = START, active = -1;
+    var dragging = false, startX = 0, startPos = 0, moved = 0, lastX = 0, lastT = 0, vel = 0, raf = 0, wheelLock = 0;
+
+    // lookup tables keyed by distance from the centre: 0, 1, 2, 2.6
+    var DESK = { x: [0, 60, 94, 114], rot: [0, 26, 34, 38], sc: [1, 0.82, 0.66, 0.56], op: [1, 0.92, 0.5, 0] };
+    var MOB = { x: [0, 66, 100, 118], rot: [0, 14, 20, 24], sc: [1, 0.8, 0.64, 0.52], op: [1, 0.7, 0.25, 0] };
+
+    function wrapD(d) { d = ((d % n) + n) % n; return d > n / 2 ? d - n : d; }
+    function seg(a) { if (a <= 1) return [0, a]; if (a <= 2) return [1, a - 1]; return [2, Math.min((a - 2) / 0.6, 1)]; }
+    function val(arr, i, f) { return arr[i] + (arr[i + 1] - arr[i]) * f; }
+
+    function render() {
+      var T = window.innerWidth < 900 ? MOB : DESK;
+      for (var i = 0; i < n; i++) {
+        var d = wrapD(i - pos), a = Math.abs(d), s = d < 0 ? -1 : 1, g = seg(a);
+        var x = s * val(T.x, g[0], g[1]), rot = -s * val(T.rot, g[0], g[1]);
+        var sc = val(T.sc, g[0], g[1]), op = val(T.op, g[0], g[1]);
+        var el = slides[i];
+        el.style.transform = 'translateX(' + (x - 50) + '%) rotateY(' + rot + 'deg) scale(' + sc + ')';
+        el.style.opacity = op;
+        el.style.zIndex = Math.round((3 - Math.min(a, 3)) * 10);
+        el.style.pointerEvents = op < 0.15 ? 'none' : 'auto';
+      }
+      var idx = ((Math.round(pos) % n) + n) % n;
+      if (idx !== active) setActive(idx);
+    }
+
+    function setActive(idx) {
+      active = idx;
+      slides.forEach(function (el, i) {
+        el.classList.toggle('is-active', i === idx);
+        el.setAttribute('tabindex', i === idx ? '0' : '-1');
+        el.setAttribute('aria-hidden', i === idx ? 'false' : 'true');
+      });
+      dots.forEach(function (d, i) { d.classList.toggle('is-active', i === idx); d.setAttribute('aria-current', i === idx ? 'true' : 'false'); });
+      var el = slides[idx];
+      capTitle.textContent = el.getAttribute('data-title');
+      capSub.textContent = el.getAttribute('data-sub');
+      capDemo.setAttribute('href', el.getAttribute('data-live'));
+      capDemo.setAttribute('aria-label', 'Open the live demo of ' + el.getAttribute('data-title'));
+      capMore.setAttribute('href', 'projects.html#' + el.getAttribute('data-id'));
+      cap.classList.remove('swap'); void cap.offsetWidth; cap.classList.add('swap');
+    }
+
+    function tick() {
+      raf = 0;
+      if (dragging) return;
+      var diff = target - pos;
+      if (reduceMotion || Math.abs(diff) < 0.002) { pos = target; render(); return; }
+      pos += diff * 0.15;
+      render();
+      raf = requestAnimationFrame(tick);
+    }
+    function animate() { if (!raf) raf = requestAnimationFrame(tick); }
+    function goTo(i) {                      // shortest way round to slide i
+      var k = Math.round(pos), diff = wrapD(i - k);
+      target = k + diff; animate();
+    }
+    function step(dir) { target = Math.round(target) + dir; animate(); }
+
+    // ----- drag / swipe -----
+    function slideSpan() { return slides[0].offsetWidth * 0.6; }
+    stage.addEventListener('pointerdown', function (e) {
+      if (e.button !== undefined && e.button !== 0) return;
+      dragging = true; moved = 0; startX = lastX = e.clientX; startPos = pos; lastT = e.timeStamp; vel = 0;
+    });
+    window.addEventListener('pointermove', function (e) {
+      if (!dragging) return;
+      var dx = e.clientX - startX;
+      moved = Math.max(moved, Math.abs(dx));
+      var dt = e.timeStamp - lastT;
+      if (dt > 0) vel = 0.8 * vel + 0.2 * ((lastX - e.clientX) / slideSpan() / dt);
+      lastX = e.clientX; lastT = e.timeStamp;
+      pos = startPos - dx / slideSpan();
+      render();
+    });
+    function endDrag() {
+      if (!dragging) return;
+      dragging = false;
+      var flick = Math.max(-0.5, Math.min(0.5, vel * 150));   // a quick flick adds a little momentum
+      var base = Math.round(startPos), reach = Math.abs(pos - startPos) > 1.7 ? 2 : 1;   // one project per swipe, two only for a long drag
+      target = Math.max(base - reach, Math.min(base + reach, Math.round(pos + flick)));
+      animate();
+    }
+    window.addEventListener('pointerup', endDrag);
+    window.addEventListener('pointercancel', endDrag);
+
+    // a drag must not count as a click; clicking a side card brings it to the centre
+    stage.addEventListener('click', function (e) {
+      if (moved > 6) { e.preventDefault(); e.stopPropagation(); return; }
+      var a = e.target.closest && e.target.closest('.slide');
+      if (a && slides.indexOf(a) !== active) { e.preventDefault(); goTo(slides.indexOf(a)); }
+    }, true);
+    stage.addEventListener('dragstart', function (e) { e.preventDefault(); });
+
+    // ----- controls -----
+    wrap.querySelector('.car-prev').addEventListener('click', function () { step(-1); });
+    wrap.querySelector('.car-next').addEventListener('click', function () { step(1); });
+    dots.forEach(function (d, i) { d.addEventListener('click', function () { goTo(i); }); });
+    stage.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1); }
+      else if (e.key === 'ArrowRight') { e.preventDefault(); step(1); }
+    });
+    // two-finger sideways swipe on a trackpad
+    stage.addEventListener('wheel', function (e) {
+      if (Math.abs(e.deltaX) <= Math.abs(e.deltaY) || Math.abs(e.deltaX) < 24) return;
+      e.preventDefault();
+      var now = Date.now(); if (now - wheelLock < 420) return;
+      wheelLock = now; step(e.deltaX > 0 ? 1 : -1);
+    }, { passive: false });
+    window.addEventListener('resize', render);
+
+    render();
+  })();
+
   if (reduceMotion) return;
 
   /* ---------- Pointer: page spotlight + per-card glow ---------- */

@@ -273,6 +273,29 @@
     render();
   })();
 
+
+  /* ---------- Demo video dialog (Projects page) ---------- */
+  (function initDemo() {
+    var dlg = document.getElementById('demoDialog');
+    if (!dlg || !dlg.showModal) return;
+    var video = document.getElementById('demoVideo'), title = document.getElementById('demoTitle');
+    var lastBtn = null;
+    function openDemo(btn) {
+      lastBtn = btn;
+      title.textContent = btn.getAttribute('data-title') + ' · demo';
+      dlg.classList.toggle('is-tall', btn.getAttribute('data-tall') === '1');
+      video.setAttribute('poster', btn.getAttribute('data-poster'));
+      video.src = btn.getAttribute('data-video');
+      dlg.showModal();
+      var pr = video.play(); if (pr && pr.catch) pr.catch(function () {});
+    }
+    function closeDemo() { video.pause(); video.removeAttribute('src'); video.load(); if (dlg.open) dlg.close(); if (lastBtn) lastBtn.focus(); }
+    document.querySelectorAll('.demo-open').forEach(function (b) { b.addEventListener('click', function () { openDemo(b); }); });
+    dlg.querySelector('.demo-close').addEventListener('click', closeDemo);
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) closeDemo(); });   // click the backdrop
+    dlg.addEventListener('cancel', function (e) { e.preventDefault(); closeDemo(); });    // Escape
+  })();
+
   if (reduceMotion) return;
 
   /* ---------- Pointer: page spotlight + per-card glow ---------- */

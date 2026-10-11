@@ -6,7 +6,7 @@
 <title>Dondie Godwin Gatan — Portfolio</title>
 <meta name="description" content="Software engineering portfolio of Dondie Godwin Gatan — full-stack development and applied AI projects (Flask, React, Azure AI).">
 <meta property="og:title" content="Dondie Godwin Gatan — Portfolio">
-<meta property="og:description" content="Software engineering portfolio — full-stack development and applied AI projects.">
+<meta property="og:description" content="Software engineering portfolio of Dondie Godwin Gatan — full-stack development and applied AI projects (Flask, React, Azure AI).">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://dondiegatan.github.io/dondiegatan-portfolio/">
 <meta property="og:image" content="https://dondiegatan.github.io/dondiegatan-portfolio/assets/og-image.png">
@@ -14,502 +14,103 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Dondie Godwin Gatan — Portfolio">
-<meta name="twitter:description" content="Software engineering portfolio — full-stack development and applied AI projects.">
+<meta name="twitter:description" content="Software engineering portfolio of Dondie Godwin Gatan — full-stack development and applied AI projects (Flask, React, Azure AI).">
 <meta name="twitter:image" content="https://dondiegatan.github.io/dondiegatan-portfolio/assets/og-image.png">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+<noscript><style>.loader,.curtain{display:none!important}.rise,.reveal{opacity:1!important;transform:none!important}</style></noscript>
 </head>
-<body>
+<body data-page="home">
+<a class="skip" href="#main">Skip to content</a>
+<div class="loader" data-style="strips" aria-hidden="true"><div class="loader-panels"><i style="--d:0"></i><i style="--d:1"></i><i style="--d:2"></i><i style="--d:3"></i><i style="--d:4"></i><i style="--d:5"></i></div><div class="loader-inner"><svg class="loader-mark" viewBox="0 0 120 120" aria-hidden="true"><circle class="ring" cx="60" cy="60" r="52"/><circle class="ring2" cx="60" cy="60" r="40"/><text x="60" y="72" text-anchor="middle">DG</text></svg><div class="loader-label">Welcome</div><div class="loader-bar"><i></i></div></div></div>
+<div class="curtain" aria-hidden="true"></div>
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="bg-glow" aria-hidden="true"></div>
+<div class="spotlight" aria-hidden="true"></div>
 <div class="scroll-progress" id="scrollProgress"></div>
 
 <header class="nav">
   <div class="nav-inner">
-    <a href="#top" class="nav-brand">Dondie Godwin Gatan</a>
-    <nav class="nav-links">
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
+    <a href="index.html" class="nav-brand">Dondie Godwin Gatan</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="about.html">Profile</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="contact.html">Contact</a>
       <a href="https://github.com/DondieGatan" target="_blank" rel="noopener" class="nav-cta">GitHub</a>
     </nav>
   </div>
 </header>
 
-<main>
-  <section id="top" class="hero">
+<main id="main">
+  <section class="hero">
     <div class="hero-inner">
-      <p class="eyebrow">Software Engineer · Full-Stack &amp; AI</p>
-      <h1>I build full-stack apps that turn messy real-world data into something useful.</h1>
-      <p class="hero-sub">
+      <p class="eyebrow rise" style="--i:0">Software Engineer · Full-Stack &amp; AI</p>
+      <h1 class="rise" style="--i:1">I build full-stack apps that turn <span class="grad">messy real-world data</span> into something useful.</h1>
+      <p class="hero-sub rise" style="--i:2">
         Software Engineering graduate focused on full-stack web development and applied AI,
         Microsoft Certified in Azure AI (AI-103). My final year project, Smart Resume Analyser,
         parses real resume documents with OCR and NLP to score and give feedback on them —
         end to end, from upload to database to dashboard. I've also shipped a RAG chatbot for a
         dental clinic platform and a live ordering site for a real cafe.
       </p>
-      <p class="hero-education">🎓 BEng (Hons) Software Engineering — University of Greater Manchester, Ras Al Khaimah, UAE (Graduated 2026)</p>
-      <div class="hero-actions">
-        <a href="#projects" class="btn btn-primary">View Projects</a>
+      <p class="hero-education rise" style="--i:3">🎓 BEng (Hons) Software Engineering — University of Greater Manchester, Ras Al Khaimah, UAE (Graduated 2026)</p>
+      <div class="hero-actions rise" style="--i:4">
+        <a href="projects.html" class="btn btn-primary">View Projects</a>
         <a href="assets/Dondie_Godwin_Gatan_CV.pdf" target="_blank" rel="noopener" class="btn btn-ghost">Download CV ↓</a>
-        <a href="mailto:dondiegodwin@gmail.com" class="btn btn-ghost">Contact Me</a>
+        <a href="contact.html" class="btn btn-ghost">Contact Me</a>
       </div>
+      <ul class="stats rise" style="--i:5">
+        <li class="stat"><strong>5</strong><span>projects, all deployed live</span></li>
+        <li class="stat"><strong>382</strong><span>automated tests in Floss Clinic</span></li>
+        <li class="stat"><strong>AI-103</strong><span>Microsoft Certified, Azure AI</span></li>
+      </ul>
     </div>
   </section>
 
-  <section id="projects" class="section">
+  <section class="section">
     <div class="section-inner">
-      <p class="section-eyebrow reveal">What I've Built</p>
-      <h2 class="section-title reveal">Featured Projects</h2>
-
-      <article class="project reveal" id="resume-analyser">
-        <div class="project-header">
-          <div>
-            <h3>Smart Resume Analyser</h3>
-            <p class="project-tagline">AI-assisted resume scoring, feedback, and job-matching platform</p>
-          </div>
-          <div class="project-links">
-            <a href="https://smart-resume-analyser-z09z.onrender.com" target="_blank" rel="noopener" class="btn btn-small btn-primary">Live Demo ↗</a>
-            <a href="https://github.com/DondieGatan/Smart-Resume-Analyser" target="_blank" rel="noopener" class="btn btn-small">Source Code ↗</a>
-          </div>
-        </div>
-
-        <p class="project-desc">
-          A full-stack Flask application that takes a candidate's PDF or scanned-image resume,
-          extracts its text via OCR and PDF parsing, and analyses it with NLP to produce a scored,
-          section-by-section breakdown — skills, education, experience, and formatting — with an
-          ATS-compatibility check and concrete suggestions for improvement. It also matches a resume
-          against a pasted job description, generates personalised career feedback, and surfaces
-          trends across every resume analysed on an analytics dashboard. A guided resume builder lets
-          users compose one from scratch with structured, repeatable work-experience and education
-          entries, an in-app AI assistant (Google Gemini) that reviews the draft for gaps and rewrites
-          weak sections on request, and one-click export to a genuinely ATS-parseable PDF with real
-          embedded text rather than a rasterised image. Deployed on Render's free tier against an
-          isolated Postgres schema (Neon) — the first request after a period of inactivity can take
-          up to a minute to wake the instance.
-        </p>
-
-        <div class="project-gallery">
-          <figure>
-            <img src="assets/screenshots/home_upload.webp" alt="Smart Resume Analyser upload screen with feature overview" loading="lazy">
-            <figcaption>Upload &amp; feature overview</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/screenshots/result.webp" alt="Smart Resume Analyser scored analysis result with employer summary and section breakdown" loading="lazy">
-            <figcaption>Scored analysis &amp; employer summary</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/screenshots/dashboard.webp" alt="Smart Resume Analyser analytics dashboard with score distribution and ATS breakdown" loading="lazy">
-            <figcaption>Analytics dashboard</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/screenshots/history.webp" alt="Smart Resume Analyser resume history list" loading="lazy">
-            <figcaption>Resume history</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/screenshots/login.webp" alt="Smart Resume Analyser login screen" loading="lazy">
-            <figcaption>Authentication</figcaption>
-          </figure>
-        </div>
-
-        <ul class="project-features">
-          <li>OCR + PDF text extraction (PyMuPDF, Tesseract) so both scanned images and native PDFs work</li>
-          <li>NLP-driven skill extraction and section scoring (NLTK tokenisation, stopword filtering, tagging)</li>
-          <li>ATS-compatibility simulation with a transparent, explainable scoring breakdown</li>
-          <li>Job-description matching to rank a resume's fit against a specific role</li>
-          <li>Personalised feedback generation based on career goal, experience level, and target role</li>
-          <li>Guided resume builder with an in-app AI assistant (Google Gemini) that flags gaps in the draft and applies suggested rewrites in one click</li>
-          <li>Native-text PDF export — real embedded text via direct PDF drawing, not a rasterised image, so builder output is actually machine-readable by real ATS software</li>
-          <li>Auth system with email-based password reset (SendGrid) and per-user history</li>
-          <li>Analytics dashboard (score distribution, top skills, career-field breakdown) with CSV/JSON export for Power BI</li>
-        </ul>
-
-        <div class="project-stack">
-          <span class="tag">Python</span>
-          <span class="tag">Flask</span>
-          <span class="tag">Postgres</span>
-          <span class="tag">NLTK</span>
-          <span class="tag">PyMuPDF</span>
-          <span class="tag">Tesseract OCR</span>
-          <span class="tag">Google Gemini API</span>
-          <span class="tag">Docker</span>
-          <span class="tag">Render</span>
-          <span class="tag">HTML/CSS/JS</span>
-        </div>
-      </article>
-
-      <article class="project reveal featured" id="mori-matcha">
-        <div class="project-header">
-          <div>
-            <span class="featured-badge">★ Featured</span>
-            <h3>Mori Matcha</h3>
-            <p class="project-tagline">Live cafe website with a real ordering and admin backend</p>
-          </div>
-          <div class="project-links">
-            <a href="https://mori-matcha-inky.vercel.app" target="_blank" rel="noopener" class="btn btn-small btn-primary">Live Demo ↗</a>
-            <a href="https://github.com/DondieGatan/mori-matcha" target="_blank" rel="noopener" class="btn btn-small">Source Code ↗</a>
-          </div>
-        </div>
-
-        <p class="project-desc">
-          A production website for a real cafe business — a React/Vite frontend backed by
-          Vercel serverless functions and a Postgres order log, with an admin dashboard for
-          managing incoming orders and per-drink availability, a live Google Reviews sync,
-          an event Party Cart page with a booking-inquiry builder, and full SEO/PWA setup.
-          Deployed and actually in use, not just a demo.
-        </p>
-
-        <div class="project-gallery">
-          <figure>
-            <img src="assets/screenshots/mori-matcha/home.jpg" alt="Mori Matcha homepage hero and menu section with featured drinks and New-tagged items including Oreo Cloud Matcha" loading="lazy">
-            <figcaption>Homepage — featured drinks and menu</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/screenshots/mori-matcha/cart-flow.png" alt="Mori Matcha cart showing a numbered How Ordering Works guide before checkout" loading="lazy">
-            <figcaption>Cart — step-by-step ordering guide</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/screenshots/mori-matcha/feedback.png" alt="Mori Matcha customer feedback section with live Google reviews" loading="lazy">
-            <figcaption>Customer feedback — live Google Reviews sync</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/screenshots/mori-matcha/party-cart.jpg" alt="Mori Matcha Party Cart page showing four event packages from 3,000 to 11,500 pesos, what is included, and the matcha varieties" loading="lazy">
-            <figcaption>Party Cart — event packages and booking inquiry</figcaption>
-          </figure>
-        </div>
-
-        <ul class="project-features">
-          <li>Cart-based ordering flow with a built-in step-by-step guide, writing to a Postgres order log via Vercel serverless functions with rate limiting on submission</li>
-          <li>Admin dashboard for managing order status, with CSV export and a recoverable trash bin for deleted orders</li>
-          <li>Live Google Places reviews sync merged with a curated fallback list, capped and text-clamped to keep the section a tidy row of highlights</li>
-          <li>Tri-state per-drink availability (available / unavailable / coming soon) managed from the admin panel, "New" badges for recently added drinks, plus Vercel Analytics</li>
-          <li>Party Cart page for events — four packages, optional add-ons and booking notes, and an inquiry builder that validates the details (date, guest count, venue) and composes a ready-to-send Instagram message, copied or sent in one tap</li>
-          <li>Full SEO/PWA setup — meta tags, JSON-LD kept in sync with the live opening hours, per-page share previews, installable manifest</li>
-        </ul>
-
-        <div class="project-stack">
-          <span class="tag">React</span>
-          <span class="tag">Vite</span>
-          <span class="tag">Vercel</span>
-          <span class="tag">Postgres</span>
-          <span class="tag">JavaScript</span>
-        </div>
-      </article>
-
-      <article class="project reveal featured" id="floss-clinic">
-        <div class="project-header">
-          <div>
-            <span class="featured-badge">★ Featured</span>
-            <h3>Floss Clinic</h3>
-            <p class="project-tagline">Dental clinic platform with real conflict-safe booking and a grounded RAG chatbot</p>
-          </div>
-          <div class="project-links">
-            <a href="https://floss-beta.vercel.app" target="_blank" rel="noopener" class="btn btn-small btn-primary">Live Demo ↗</a>
-            <a href="https://github.com/DondieGatan/floss" target="_blank" rel="noopener" class="btn btn-small">Source Code ↗</a>
-          </div>
-        </div>
-
-        <p class="project-desc">
-          A full-stack dental clinic platform — appointment booking with genuine double-booking
-          prevention, automatic confirmation and reminder emails, a staff-managed doctor directory,
-          patient records with role-based access, and a retrieval-augmented chatbot that only ever
-          answers from the clinic's own documents and refuses to give medical advice. Deployed live
-          (Vercel + Render), with 382 tests (268 backend, 114 frontend) and a CI pipeline running
-          both suites on every push.
-        </p>
-
-        <div class="project-gallery">
-          <figure>
-            <img src="assets/screenshots/floss-clinic/login-2fa.webp" alt="Floss Clinic sign-in screen with a two-factor verification code prompt" loading="lazy">
-            <figcaption>Sign-in — two-factor verification, required for staff and admin accounts</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/screenshots/floss-clinic/dentists.webp" alt="Floss Clinic dentist directory grid filterable by department, with a book appointment button on each card" loading="lazy">
-            <figcaption>Dentist directory — filter by specialty, book in a few clicks</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/screenshots/floss-clinic/appointments-reschedule.webp" alt="Floss Clinic clinic-wide appointments list with Edit and Cancel actions on each row" loading="lazy">
-            <figcaption>Clinic-wide appointments — reschedule with live availability, not just cancel-and-rebook</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/screenshots/floss-clinic/staff-dashboard.webp" alt="Floss Clinic staff dashboard with a weekly appointments bar chart and today's schedule" loading="lazy">
-            <figcaption>Staff dashboard — role-scoped navigation and a weekly appointments chart</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/screenshots/floss-clinic/team-roles.webp" alt="Floss Clinic Team and Roles page listing every staff account with a role dropdown and a recent activity audit log" loading="lazy">
-            <figcaption>Team &amp; Roles — grant or revoke access, with a full audit trail</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/screenshots/floss-clinic/knowledge-base.webp" alt="Floss Clinic Knowledge Base page showing an auto-generated Dentist and Department Directory document ready for the chatbot to cite" loading="lazy">
-            <figcaption>Knowledge Base — an auto-regenerating directory keeps the chatbot's answers current</figcaption>
-          </figure>
-        </div>
-
-        <ul class="project-features">
-          <li>Appointment booking that rejects real conflicts via a half-open interval check, enforced at the database with a partial unique index — not just an application-level check</li>
-          <li>A RAG chatbot grounded in the clinic's own documents (sentence-transformer embeddings, cosine retrieval, a confidence threshold below which it says "I don't know" instead of guessing), streamed token-by-token</li>
-          <li>An auto-regenerating "Dentist & Department Directory" document, chunked one entity at a time so retrieval doesn't dilute across multiple doctors — the chatbot's knowledge base never goes stale when staff update the directory</li>
-          <li>Role-based access (patient / staff / admin / owner) as a signed JWT claim, refreshed on token refresh so a role change takes effect on next login</li>
-          <li>382 tests (268 backend + 114 frontend), GitHub Actions CI on every push</li>
-        </ul>
-
-        <div class="project-stack">
-          <span class="tag">Python</span>
-          <span class="tag">Flask</span>
-          <span class="tag">SQLAlchemy</span>
-          <span class="tag">React</span>
-          <span class="tag">Vite</span>
-          <span class="tag">sentence-transformers</span>
-        </div>
-      </article>
-
-      <article class="project reveal" id="library-management">
-        <div class="project-header">
-          <div>
-            <h3>Library Management System</h3>
-            <p class="project-tagline">Role-based library app with auth, search, and CI-tested code</p>
-          </div>
-          <div class="project-links">
-            <a href="https://library-management-system-s4ys.onrender.com" target="_blank" rel="noopener" class="btn btn-small btn-primary">Live Demo ↗</a>
-            <a href="https://github.com/DondieGatan/library-management-system" target="_blank" rel="noopener" class="btn btn-small">Source Code ↗</a>
-          </div>
-        </div>
-
-        <p class="project-desc">
-          A Flask app for running a small library, grown from a CRUD demo into a proper
-          role-based system: owner/admin/member permissions behind authentication, a
-          searchable book catalogue with auto-fetched covers, and a loans workflow that
-          keeps available-copy counts and due dates consistent automatically. Try the
-          live demo with the seeded account (<code>owner</code> / <code>password123</code>),
-          or register your own — the first account is always made owner automatically.
-        </p>
-
-        <div class="project-gallery">
-          <figure>
-            <img src="assets/screenshots/library/dashboard.webp" alt="Library Management System dashboard with book, member, and loan stats" loading="lazy">
-            <figcaption>Dashboard — live stats and a loans-over-time chart</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/screenshots/library/books.webp" alt="Library Management System book catalogue as a cover grid with search" loading="lazy">
-            <figcaption>Book catalogue — cover grid with auto-fetched descriptions</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/screenshots/library/loans.webp" alt="Library Management System loans page with borrow form and loan history" loading="lazy">
-            <figcaption>Borrow / return workflow</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/screenshots/library/rbac-member-view.webp" alt="Library Management System nav bar restricted to Books-only for a demoted member account" loading="lazy">
-            <figcaption>Role-based access in action — a demoted member's nav collapses to Books only</figcaption>
-          </figure>
-        </div>
-
-        <ul class="project-features">
-          <li>Role-based access control — owner/admin/member — with CSRF protection and rate-limited login</li>
-          <li>Searchable book catalogue as a cover grid, with auto-fetched covers and descriptions</li>
-          <li>Borrow/return workflow that keeps available-copy counts and due dates consistent, with delete-guards against removing a book or member with an active loan</li>
-          <li>Dashboard with live stats, a loans-over-time chart, and CSV export for books and loans</li>
-          <li>Full pytest suite with GitHub Actions CI, plus a dark/light theme toggle</li>
-        </ul>
-
-        <div class="project-stack">
-          <span class="tag">Python</span>
-          <span class="tag">Flask</span>
-          <span class="tag">SQLite</span>
-          <span class="tag">Jinja2</span>
-          <span class="tag">pytest</span>
-          <span class="tag">GitHub Actions</span>
-        </div>
-      </article>
-
-      <article class="project reveal" id="expense-tracker">
-        <div class="project-header">
-          <div>
-            <h3>Expense Tracker</h3>
-            <p class="project-tagline">Flask REST API + React Native (TypeScript) app, deployed to Android and the web</p>
-          </div>
-          <div class="project-links">
-            <a href="https://expense-tracker-web-rosy.vercel.app" target="_blank" rel="noopener" class="btn btn-small btn-primary">Live Demo ↗</a>
-            <a href="https://github.com/DondieGatan/expense-tracker" target="_blank" rel="noopener" class="btn btn-small">Source Code ↗</a>
-          </div>
-        </div>
-
-        <p class="project-desc">
-          A personal expense tracker rebuilt as a Flask JSON API (SQLAlchemy + JWT auth)
-          behind a React Native / Expo (TypeScript) app, deployed for real: the API runs
-          on Render against a Postgres database (Neon), the web build is deployed on Vercel,
-          and the app itself also ships as an installable Android APK via EAS Build — not
-          just a localhost demo. Light/dark theming, animated charts, a SendGrid-backed
-          forgot-password flow, CSV export, and quick-add templates round out the UX.
-        </p>
-
-        <div class="project-gallery">
-          <figure>
-            <img src="assets/screenshots/expense-tracker/login.png" alt="Expense Tracker login screen: a dark glass card with a green accent glow over a wavy green gradient background, email and password fields, and a circular submit button" loading="lazy">
-            <figcaption>Login — glass card over a wavy gradient background</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/screenshots/expense-tracker/register.png" alt="Expense Tracker registration screen with full name, email, and password fields over the same wavy green gradient background as the login screen" loading="lazy">
-            <figcaption>Register — full name, email, and password</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/screenshots/expense-tracker/dashboard.png" alt="Expense Tracker dashboard with budget progress, recent expenses, and a category breakdown chart" loading="lazy">
-            <figcaption>Dashboard — budget tracking, recent expenses, category chart</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/screenshots/expense-tracker/add-expense.png" alt="Expense Tracker add expense form with quick-add templates, category chips, and payment method selection" loading="lazy">
-            <figcaption>Add expense — quick-add templates, category chips</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/screenshots/expense-tracker/budget.png" alt="Expense Tracker monthly budget screen with a 12-currency selector chip row and a live spending progress bar" loading="lazy">
-            <figcaption>Budget — per-user currency selection, live progress</figcaption>
-          </figure>
-          <figure>
-            <img src="assets/screenshots/expense-tracker/history.png" alt="Expense Tracker expense history screen with a search bar, category filter chips, and a CSV export button" loading="lazy">
-            <figcaption>History — search, category filters, CSV export</figcaption>
-          </figure>
-        </div>
-
-        <ul class="project-features">
-          <li>JWT-authenticated Flask REST API (SQLAlchemy + Flask-Migrate) against Postgres, deployed on Render via Docker</li>
-          <li>React Native / Expo mobile app — bottom-tab navigation, animated dashboard charts, category filtering, budget tracking</li>
-          <li>Per-user currency preference (12 ISO 4217 codes) persisted server-side, driving every amount shown across the app</li>
-          <li>Light/dark theme with persisted preference, swipe-to-delete on native (a dedicated delete action on web), CSV export, pull-to-refresh, and haptic feedback</li>
-          <li>Forgot/reset password flow — a SendGrid-emailed one-time code, hashed and single-use server-side, no account enumeration</li>
-          <li>Real Android APK built and distributed via EAS Build, not just an Expo Go preview</li>
-          <li>Web build (Expo for Web) deployed on Vercel, hitting the same Flask API through a locked-down CORS allowlist</li>
-          <li>CORS allowlist and per-endpoint rate limiting on auth routes; pytest suite covering auth, ownership isolation, and CRUD</li>
-        </ul>
-
-        <div class="project-stack">
-          <span class="tag">Flask</span>
-          <span class="tag">SQLAlchemy</span>
-          <span class="tag">JWT</span>
-          <span class="tag">React Native</span>
-          <span class="tag">Expo</span>
-          <span class="tag">TypeScript</span>
-          <span class="tag">Postgres</span>
-          <span class="tag">Render</span>
-          <span class="tag">Vercel</span>
-          <span class="tag">pytest</span>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <section id="skills" class="section section-alt">
-    <div class="section-inner">
-      <p class="section-eyebrow reveal">What I Bring</p>
-      <h2 class="section-title reveal">Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-group reveal">
-          <h4>Languages</h4>
-          <p>Python, TypeScript, JavaScript, C#, SQL, HTML/CSS</p>
-        </div>
-        <div class="skill-group reveal">
-          <h4>Web &amp; Backend</h4>
-          <p>Flask, React, React Native / Expo, Express, ASP.NET Core MVC, REST API design, JWT &amp; session-based auth, Flask-Mail, Jinja2, Razor</p>
-        </div>
-        <div class="skill-group reveal">
-          <h4>AI &amp; Automation</h4>
-          <p>Retrieval-Augmented Generation (RAG), Google Gemini API, OpenAI API, sentence-transformers, Azure AI, n8n workflows</p>
-        </div>
-        <div class="skill-group reveal">
-          <h4>Data &amp; ML</h4>
-          <p>pandas, NumPy, scikit-learn, imbalanced-learn, NLTK, model evaluation (ROC-AUC, F1, precision/recall)</p>
-        </div>
-        <div class="skill-group reveal">
-          <h4>Data &amp; Documents</h4>
-          <p>Postgres (psycopg), SQL Server (pyodbc, Entity Framework Core), SQLite, PyMuPDF, Tesseract OCR, CSV/JSON export, Power BI integration</p>
-        </div>
-        <div class="skill-group reveal">
-          <h4>Tools</h4>
-          <p>Git &amp; GitHub, Jupyter, VS Code, matplotlib/seaborn</p>
-        </div>
-        <div class="skill-group reveal">
-          <h4>Cloud &amp; DevOps</h4>
-          <p>Docker, GitHub Actions (CI/CD), Render, Vercel, Neon Postgres</p>
-        </div>
-        <div class="skill-group reveal">
-          <h4>Certifications</h4>
-          <p>Microsoft Certified: Azure AI Apps and Agents Developer Associate (AI-103), Microsoft Certified: Azure AI Fundamentals (AI-901), AI Automation Specialist (Jobescape)</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="section">
-    <div class="section-inner contact-inner">
-      <p class="section-eyebrow reveal">Let's Connect</p>
-      <h2 class="section-title reveal">Get in Touch</h2>
-      <p class="contact-sub reveal">Open to Software Engineer and Full-Stack Developer roles — on-site, hybrid, or remote. I'd love to hear from you.</p>
-      <div class="contact-links reveal">
-        <a href="mailto:dondiegodwin@gmail.com" class="btn btn-primary">dondiegodwin@gmail.com</a>
-        <a href="https://github.com/DondieGatan" target="_blank" rel="noopener" class="btn btn-ghost">github.com/DondieGatan</a>
-        <a href="https://www.linkedin.com/in/dondie-godwin-gatan" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+      <p class="section-eyebrow reveal">Explore</p>
+      <h2 class="section-title reveal">Where to next?</h2>
+      <div class="explore-grid">
+        <a class="explore-card reveal" href="about.html" style="--c1:#f472b6;--c2:#fbbf24">
+          <span class="explore-no">01</span>
+          <h3>Profile</h3>
+          <p>Who I am: background, experience, education, certifications and awards.</p>
+          <span class="explore-arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="explore-card reveal" href="projects.html" style="--c1:#38bdf8;--c2:#818cf8">
+          <span class="explore-no">02</span>
+          <h3>Projects</h3>
+          <p>Five deployed projects across AI, full-stack web and mobile, with live demos and source code.</p>
+          <span class="explore-arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="explore-card reveal" href="skills.html" style="--c1:#34d399;--c2:#a3e635">
+          <span class="explore-no">03</span>
+          <h3>Skills</h3>
+          <p>Languages, frameworks, AI tooling, data and cloud, grouped by what I actually use.</p>
+          <span class="explore-arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="explore-card reveal" href="contact.html" style="--c1:#a78bfa;--c2:#fb7185">
+          <span class="explore-no">04</span>
+          <h3>Contact</h3>
+          <p>Open to Software Engineer and Full-Stack Developer roles. Let's talk.</p>
+          <span class="explore-arrow" aria-hidden="true">→</span>
+        </a>
       </div>
     </div>
   </section>
 </main>
 
 <footer class="footer">
-  <p>&copy; 2026 Dondie Godwin Gatan</p>
+  <p>&copy; 2026 Dondie Godwin Gatan &middot; <a href="https://github.com/DondieGatan" target="_blank" rel="noopener">GitHub</a> &middot; <a href="https://www.linkedin.com/in/dondie-godwin-gatan" target="_blank" rel="noopener">LinkedIn</a></p>
   <p class="footer-note">Built with vanilla HTML, CSS &amp; JavaScript — no framework, by choice.</p>
 </footer>
-
-<script>
-(function () {
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  var progress = document.getElementById('scrollProgress');
-  function updateProgress() {
-    var h = document.documentElement;
-    var height = h.scrollHeight - h.clientHeight;
-    var pct = height > 0 ? (h.scrollTop / height) * 100 : 0;
-    progress.style.width = pct + '%';
-  }
-  document.addEventListener('scroll', updateProgress, { passive: true });
-  updateProgress();
-
-  var nav = document.querySelector('.nav');
-  function updateNav() {
-    nav.classList.toggle('scrolled', window.scrollY > 8);
-  }
-  document.addEventListener('scroll', updateNav, { passive: true });
-  updateNav();
-
-  var sections = Array.prototype.slice.call(document.querySelectorAll('main > section[id]'));
-  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-links a[href^="#"]'));
-  if (sections.length && navLinks.length && 'IntersectionObserver' in window) {
-    var spy = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        var link = navLinks.filter(function (a) { return a.getAttribute('href') === '#' + entry.target.id; })[0];
-        if (!link || !entry.isIntersecting) return;
-        navLinks.forEach(function (a) { a.classList.remove('active'); });
-        link.classList.add('active');
-      });
-    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
-    sections.forEach(function (s) { spy.observe(s); });
-  }
-
-  var revealEls = document.querySelectorAll('.reveal');
-  if (reduceMotion || !('IntersectionObserver' in window)) {
-    revealEls.forEach(function (el) { el.classList.add('is-visible'); });
-  } else {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-    revealEls.forEach(function (el) { io.observe(el); });
-  }
-})();
-</script>
-
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="site.js"></script>
 </body>
 </html>

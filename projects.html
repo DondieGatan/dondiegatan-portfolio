@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Dondie Godwin Gatan</title>
+<meta name="description" content="Five deployed projects by Dondie Godwin Gatan: Smart Resume Analyser, Mori Matcha, Floss Clinic, Library Management System and Expense Tracker.">
+<meta property="og:title" content="Projects — Dondie Godwin Gatan">
+<meta property="og:description" content="Five deployed projects by Dondie Godwin Gatan: Smart Resume Analyser, Mori Matcha, Floss Clinic, Library Management System and Expense Tracker.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dondiegatan.github.io/dondiegatan-portfolio/projects.html">
+<meta property="og:image" content="https://dondiegatan.github.io/dondiegatan-portfolio/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Projects — Dondie Godwin Gatan">
+<meta name="twitter:description" content="Five deployed projects by Dondie Godwin Gatan: Smart Resume Analyser, Mori Matcha, Floss Clinic, Library Management System and Expense Tracker.">
+<meta name="twitter:image" content="https://dondiegatan.github.io/dondiegatan-portfolio/assets/og-image.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<noscript><style>.loader,.curtain{display:none!important}.rise,.reveal{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body data-page="projects">
+<a class="skip" href="#main">Skip to content</a>
+<div class="loader" data-style="shutters" aria-hidden="true"><div class="loader-panels"><i style="--d:0"></i><i style="--d:1"></i><i style="--d:2"></i><i style="--d:3"></i><i style="--d:4"></i></div><div class="loader-inner"><svg class="loader-mark" viewBox="0 0 120 120" aria-hidden="true"><circle class="ring" cx="60" cy="60" r="52"/><circle class="ring2" cx="60" cy="60" r="40"/><text x="60" y="72" text-anchor="middle">DG</text></svg><div class="loader-label">Projects</div><div class="loader-bar"><i></i></div></div></div>
+<div class="curtain" aria-hidden="true"></div>
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="bg-glow" aria-hidden="true"></div>
+<div class="spotlight" aria-hidden="true"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Dondie Godwin Gatan</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="about.html">Profile</a>
+      <a href="projects.html" aria-current="page">Projects</a>
+      <a href="skills.html">Skills</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://github.com/DondieGatan" target="_blank" rel="noopener" class="nav-cta">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-head">
+    <div class="section-inner">
+      <p class="eyebrow rise" style="--i:0">What I've Built</p>
+      <h1 class="page-title rise" style="--i:1">Featured <span class="grad">Projects</span></h1>
+      <p class="page-lede rise" style="--i:2">Five deployed projects: AI-assisted tools, production web apps, and a mobile app, each with a live demo and source code.</p>
+      <div class="filters rise" style="--i:3" role="group" aria-label="Filter projects">
+        <button class="filter is-active" data-filter="all" aria-pressed="true">All<span>5</span></button>
+        <button class="filter" data-filter="ai" aria-pressed="false">AI &amp; ML<span>2</span></button>
+        <button class="filter" data-filter="web" aria-pressed="false">Web<span>5</span></button>
+        <button class="filter" data-filter="mobile" aria-pressed="false">Mobile<span>1</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:30px">
+    <div class="section-inner">
+      <article class="project reveal" id="resume-analyser" data-cat="ai web">
+        <span class="project-no" aria-hidden="true">01</span>
+        <div class="project-top">
+          <div class="project-thumb" aria-hidden="true">
+            <img src="assets/screenshots/result.webp" alt="" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div>
+            <h3>Smart Resume Analyser</h3>
+            <p class="project-tagline">AI-assisted resume scoring, feedback, and job-matching platform</p>
+          </div>
+            <p class="project-lede">Upload a PDF or scanned resume and get an OCR + NLP score, an ATS-compatibility check, job-description matching, and an in-app Gemini assistant.</p>
+            <div class="project-stack">
+          <span class="tag">Python</span>
+          <span class="tag">Flask</span>
+          <span class="tag">Postgres</span>
+          <span class="tag">NLTK</span>
+          <span class="tag">PyMuPDF</span>
+          <span class="tag">Tesseract OCR</span>
+          <span class="tag">Google Gemini API</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Render</span>
+          <span class="tag">HTML/CSS/JS</span>
+        </div>
+            <div class="project-actions">
+              <div class="project-links">
+            <a href="https://smart-resume-analyser-z09z.onrender.com" target="_blank" rel="noopener" class="btn btn-small btn-primary">Live Demo ↗</a>
+            <a href="https://github.com/DondieGatan/Smart-Resume-Analyser" target="_blank" rel="noopener" class="btn btn-small">Source Code ↗</a>
+          </div>
+            </div>
+          </div>
+        </div>
+
+        <details class="project-more">
+          <summary><span class="when-closed">View details</span><span class="when-open">Hide details</span></summary>
+          <div class="project-more-body">
+            <p class="project-desc">
+          A full-stack Flask application that takes a candidate's PDF or scanned-image resume,
+          extracts its text via OCR and PDF parsing, and analyses it with NLP to produce a scored,
+          section-by-section breakdown — skills, education, experience, and formatting — with an
+          ATS-compatibility check and concrete suggestions for improvement. It also matches a resume
+          against a pasted job description, generates personalised career feedback, and surfaces
+          trends across every resume analysed on an analytics dashboard. A guided resume builder lets
+          users compose one from scratch with structured, repeatable work-experience and education
+          entries, an in-app AI assistant (Google Gemini) that reviews the draft for gaps and rewrites
+          weak sections on request, and one-click export to a genuinely ATS-parseable PDF with real
+          embedded text rather than a rasterised image. Deployed on Render's free tier against an
+          isolated Postgres schema (Neon) — the first request after a period of inactivity can take
+          up to a minute to wake the instance.
+        </p>
+
+            <div class="project-gallery">
+          <figure>
+            <img src="assets/screenshots/home_upload.webp" alt="Smart Resume Analyser upload screen with feature overview" loading="lazy">
+            <figcaption>Upload &amp; feature overview</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/result.webp" alt="Smart Resume Analyser scored analysis result with employer summary and section breakdown" loading="lazy">
+            <figcaption>Scored analysis &amp; employer summary</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/dashboard.webp" alt="Smart Resume Analyser analytics dashboard with score distribution and ATS breakdown" loading="lazy">
+            <figcaption>Analytics dashboard</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/history.webp" alt="Smart Resume Analyser resume history list" loading="lazy">
+            <figcaption>Resume history</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/login.webp" alt="Smart Resume Analyser login screen" loading="lazy">
+            <figcaption>Authentication</figcaption>
+          </figure>
+        </div>
+
+            <ul class="project-features">
+          <li>OCR + PDF text extraction (PyMuPDF, Tesseract) so both scanned images and native PDFs work</li>
+          <li>NLP-driven skill extraction and section scoring (NLTK tokenisation, stopword filtering, tagging)</li>
+          <li>ATS-compatibility simulation with a transparent, explainable scoring breakdown</li>
+          <li>Job-description matching to rank a resume's fit against a specific role</li>
+          <li>Personalised feedback generation based on career goal, experience level, and target role</li>
+          <li>Guided resume builder with an in-app AI assistant (Google Gemini) that flags gaps in the draft and applies suggested rewrites in one click</li>
+          <li>Native-text PDF export — real embedded text via direct PDF drawing, not a rasterised image, so builder output is actually machine-readable by real ATS software</li>
+          <li>Auth system with email-based password reset (SendGrid) and per-user history</li>
+          <li>Analytics dashboard (score distribution, top skills, career-field breakdown) with CSV/JSON export for Power BI</li>
+        </ul>
+          </div>
+        </details>
+      </article>
+
+      <article class="project reveal featured" id="mori-matcha" data-cat="web">
+        <span class="project-no" aria-hidden="true">02</span>
+        <div class="project-top">
+          <div class="project-thumb" aria-hidden="true">
+            <img src="assets/screenshots/mori-matcha/home.jpg" alt="" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div>
+            <span class="featured-badge">★ Featured</span>
+            <h3>Mori Matcha</h3>
+            <p class="project-tagline">Live cafe website with a real ordering and admin backend</p>
+          </div>
+            <p class="project-lede">A production site for a real cafe: cart ordering with a Postgres order log, an admin dashboard, live Google Reviews, and an event Party Cart.</p>
+            <div class="project-stack">
+          <span class="tag">React</span>
+          <span class="tag">Vite</span>
+          <span class="tag">Vercel</span>
+          <span class="tag">Postgres</span>
+          <span class="tag">JavaScript</span>
+        </div>
+            <div class="project-actions">
+              <div class="project-links">
+            <a href="https://mori-matcha-inky.vercel.app" target="_blank" rel="noopener" class="btn btn-small btn-primary">Live Demo ↗</a>
+            <a href="https://github.com/DondieGatan/mori-matcha" target="_blank" rel="noopener" class="btn btn-small">Source Code ↗</a>
+          </div>
+            </div>
+          </div>
+        </div>
+
+        <details class="project-more">
+          <summary><span class="when-closed">View details</span><span class="when-open">Hide details</span></summary>
+          <div class="project-more-body">
+            <p class="project-desc">
+          A production website for a real cafe business — a React/Vite frontend backed by
+          Vercel serverless functions and a Postgres order log, with an admin dashboard for
+          managing incoming orders and per-drink availability, a live Google Reviews sync,
+          an event Party Cart page with a booking-inquiry builder, and full SEO/PWA setup.
+          Deployed and actually in use, not just a demo.
+        </p>
+
+            <div class="project-gallery">
+          <figure>
+            <img src="assets/screenshots/mori-matcha/home.jpg" alt="Mori Matcha homepage hero and menu section with featured drinks and New-tagged items including Oreo Cloud Matcha" loading="lazy">
+            <figcaption>Homepage — featured drinks and menu</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/mori-matcha/cart-flow.png" alt="Mori Matcha cart showing a numbered How Ordering Works guide before checkout" loading="lazy">
+            <figcaption>Cart — step-by-step ordering guide</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/mori-matcha/feedback.png" alt="Mori Matcha customer feedback section with live Google reviews" loading="lazy">
+            <figcaption>Customer feedback — live Google Reviews sync</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/mori-matcha/party-cart.jpg" alt="Mori Matcha Party Cart page showing four event packages from 3,000 to 11,500 pesos, what is included, and the matcha varieties" loading="lazy">
+            <figcaption>Party Cart — event packages and booking inquiry</figcaption>
+          </figure>
+        </div>
+
+            <ul class="project-features">
+          <li>Cart-based ordering flow with a built-in step-by-step guide, writing to a Postgres order log via Vercel serverless functions with rate limiting on submission</li>
+          <li>Admin dashboard for managing order status, with CSV export and a recoverable trash bin for deleted orders</li>
+          <li>Live Google Places reviews sync merged with a curated fallback list, capped and text-clamped to keep the section a tidy row of highlights</li>
+          <li>Tri-state per-drink availability (available / unavailable / coming soon) managed from the admin panel, "New" badges for recently added drinks, plus Vercel Analytics</li>
+          <li>Party Cart page for events — four packages, optional add-ons and booking notes, and an inquiry builder that validates the details (date, guest count, venue) and composes a ready-to-send Instagram message, copied or sent in one tap</li>
+          <li>Full SEO/PWA setup — meta tags, JSON-LD kept in sync with the live opening hours, per-page share previews, installable manifest</li>
+        </ul>
+          </div>
+        </details>
+      </article>
+
+      <article class="project reveal featured" id="floss-clinic" data-cat="ai web">
+        <span class="project-no" aria-hidden="true">03</span>
+        <div class="project-top">
+          <div class="project-thumb" aria-hidden="true">
+            <img src="assets/screenshots/floss-clinic/staff-dashboard.webp" alt="" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div>
+            <span class="featured-badge">★ Featured</span>
+            <h3>Floss Clinic</h3>
+            <p class="project-tagline">Dental clinic platform with real conflict-safe booking and a grounded RAG chatbot</p>
+          </div>
+            <p class="project-lede">Dental clinic platform with database-enforced conflict-safe booking, two-factor sign-in, and a RAG chatbot grounded in the clinic's own documents.</p>
+            <div class="project-stack">
+          <span class="tag">Python</span>
+          <span class="tag">Flask</span>
+          <span class="tag">SQLAlchemy</span>
+          <span class="tag">React</span>
+          <span class="tag">Vite</span>
+          <span class="tag">sentence-transformers</span>
+        </div>
+            <div class="project-actions">
+              <div class="project-links">
+            <a href="https://floss-beta.vercel.app" target="_blank" rel="noopener" class="btn btn-small btn-primary">Live Demo ↗</a>
+            <a href="https://github.com/DondieGatan/floss" target="_blank" rel="noopener" class="btn btn-small">Source Code ↗</a>
+          </div>
+            </div>
+          </div>
+        </div>
+
+        <details class="project-more">
+          <summary><span class="when-closed">View details</span><span class="when-open">Hide details</span></summary>
+          <div class="project-more-body">
+            <p class="project-desc">
+          A full-stack dental clinic platform — appointment booking with genuine double-booking
+          prevention, automatic confirmation and reminder emails, a staff-managed doctor directory,
+          patient records with role-based access, and a retrieval-augmented chatbot that only ever
+          answers from the clinic's own documents and refuses to give medical advice. Deployed live
+          (Vercel + Render), with 382 tests (268 backend, 114 frontend) and a CI pipeline running
+          both suites on every push.
+        </p>
+
+            <div class="project-gallery">
+          <figure>
+            <img src="assets/screenshots/floss-clinic/login-2fa.webp" alt="Floss Clinic sign-in screen with a two-factor verification code prompt" loading="lazy">
+            <figcaption>Sign-in — two-factor verification, required for staff and admin accounts</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/floss-clinic/dentists.webp" alt="Floss Clinic dentist directory grid filterable by department, with a book appointment button on each card" loading="lazy">
+            <figcaption>Dentist directory — filter by specialty, book in a few clicks</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/floss-clinic/appointments-reschedule.webp" alt="Floss Clinic clinic-wide appointments list with Edit and Cancel actions on each row" loading="lazy">
+            <figcaption>Clinic-wide appointments — reschedule with live availability, not just cancel-and-rebook</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/floss-clinic/staff-dashboard.webp" alt="Floss Clinic staff dashboard with a weekly appointments bar chart and today's schedule" loading="lazy">
+            <figcaption>Staff dashboard — role-scoped navigation and a weekly appointments chart</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/floss-clinic/team-roles.webp" alt="Floss Clinic Team and Roles page listing every staff account with a role dropdown and a recent activity audit log" loading="lazy">
+            <figcaption>Team &amp; Roles — grant or revoke access, with a full audit trail</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/floss-clinic/knowledge-base.webp" alt="Floss Clinic Knowledge Base page showing an auto-generated Dentist and Department Directory document ready for the chatbot to cite" loading="lazy">
+            <figcaption>Knowledge Base — an auto-regenerating directory keeps the chatbot's answers current</figcaption>
+          </figure>
+        </div>
+
+            <ul class="project-features">
+          <li>Appointment booking that rejects real conflicts via a half-open interval check, enforced at the database with a partial unique index — not just an application-level check</li>
+          <li>A RAG chatbot grounded in the clinic's own documents (sentence-transformer embeddings, cosine retrieval, a confidence threshold below which it says "I don't know" instead of guessing), streamed token-by-token</li>
+          <li>An auto-regenerating "Dentist & Department Directory" document, chunked one entity at a time so retrieval doesn't dilute across multiple doctors — the chatbot's knowledge base never goes stale when staff update the directory</li>
+          <li>Role-based access (patient / staff / admin / owner) as a signed JWT claim, refreshed on token refresh so a role change takes effect on next login</li>
+          <li>382 tests (268 backend + 114 frontend), GitHub Actions CI on every push</li>
+        </ul>
+          </div>
+        </details>
+      </article>
+
+      <article class="project reveal" id="library-management" data-cat="web">
+        <span class="project-no" aria-hidden="true">04</span>
+        <div class="project-top">
+          <div class="project-thumb" aria-hidden="true">
+            <img src="assets/screenshots/library/dashboard.webp" alt="" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div>
+            <h3>Library Management System</h3>
+            <p class="project-tagline">Role-based library app with auth, search, and CI-tested code</p>
+          </div>
+            <p class="project-lede">A Flask library app with owner, admin and member roles, a searchable catalogue, and a loans workflow, tested with pytest and CI.</p>
+            <div class="project-stack">
+          <span class="tag">Python</span>
+          <span class="tag">Flask</span>
+          <span class="tag">SQLite</span>
+          <span class="tag">Jinja2</span>
+          <span class="tag">pytest</span>
+          <span class="tag">GitHub Actions</span>
+        </div>
+            <div class="project-actions">
+              <div class="project-links">
+            <a href="https://library-management-system-s4ys.onrender.com" target="_blank" rel="noopener" class="btn btn-small btn-primary">Live Demo ↗</a>
+            <a href="https://github.com/DondieGatan/library-management-system" target="_blank" rel="noopener" class="btn btn-small">Source Code ↗</a>
+          </div>
+            </div>
+          </div>
+        </div>
+
+        <details class="project-more">
+          <summary><span class="when-closed">View details</span><span class="when-open">Hide details</span></summary>
+          <div class="project-more-body">
+            <p class="project-desc">
+          A Flask app for running a small library, grown from a CRUD demo into a proper
+          role-based system: owner/admin/member permissions behind authentication, a
+          searchable book catalogue with auto-fetched covers, and a loans workflow that
+          keeps available-copy counts and due dates consistent automatically. Try the
+          live demo with the seeded account (<code>owner</code> / <code>password123</code>),
+          or register your own — the first account is always made owner automatically.
+        </p>
+
+            <div class="project-gallery">
+          <figure>
+            <img src="assets/screenshots/library/dashboard.webp" alt="Library Management System dashboard with book, member, and loan stats" loading="lazy">
+            <figcaption>Dashboard — live stats and a loans-over-time chart</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/library/books.webp" alt="Library Management System book catalogue as a cover grid with search" loading="lazy">
+            <figcaption>Book catalogue — cover grid with auto-fetched descriptions</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/library/loans.webp" alt="Library Management System loans page with borrow form and loan history" loading="lazy">
+            <figcaption>Borrow / return workflow</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/library/rbac-member-view.webp" alt="Library Management System nav bar restricted to Books-only for a demoted member account" loading="lazy">
+            <figcaption>Role-based access in action — a demoted member's nav collapses to Books only</figcaption>
+          </figure>
+        </div>
+
+            <ul class="project-features">
+          <li>Role-based access control — owner/admin/member — with CSRF protection and rate-limited login</li>
+          <li>Searchable book catalogue as a cover grid, with auto-fetched covers and descriptions</li>
+          <li>Borrow/return workflow that keeps available-copy counts and due dates consistent, with delete-guards against removing a book or member with an active loan</li>
+          <li>Dashboard with live stats, a loans-over-time chart, and CSV export for books and loans</li>
+          <li>Full pytest suite with GitHub Actions CI, plus a dark/light theme toggle</li>
+        </ul>
+          </div>
+        </details>
+      </article>
+
+      <article class="project reveal" id="expense-tracker" data-cat="mobile web">
+        <span class="project-no" aria-hidden="true">05</span>
+        <div class="project-top">
+          <div class="project-thumb" aria-hidden="true">
+            <img src="assets/screenshots/expense-tracker/dashboard.png" alt="" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div>
+            <h3>Expense Tracker</h3>
+            <p class="project-tagline">Flask REST API + React Native (TypeScript) app, deployed to Android and the web</p>
+          </div>
+            <p class="project-lede">A Flask REST API with a React Native (TypeScript) client, deployed on Render and Vercel and shipped as an Android APK.</p>
+            <div class="project-stack">
+          <span class="tag">Flask</span>
+          <span class="tag">SQLAlchemy</span>
+          <span class="tag">JWT</span>
+          <span class="tag">React Native</span>
+          <span class="tag">Expo</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">Postgres</span>
+          <span class="tag">Render</span>
+          <span class="tag">Vercel</span>
+          <span class="tag">pytest</span>
+        </div>
+            <div class="project-actions">
+              <div class="project-links">
+            <a href="https://expense-tracker-web-rosy.vercel.app" target="_blank" rel="noopener" class="btn btn-small btn-primary">Live Demo ↗</a>
+            <a href="https://github.com/DondieGatan/expense-tracker" target="_blank" rel="noopener" class="btn btn-small">Source Code ↗</a>
+          </div>
+            </div>
+          </div>
+        </div>
+
+        <details class="project-more">
+          <summary><span class="when-closed">View details</span><span class="when-open">Hide details</span></summary>
+          <div class="project-more-body">
+            <p class="project-desc">
+          A personal expense tracker rebuilt as a Flask JSON API (SQLAlchemy + JWT auth)
+          behind a React Native / Expo (TypeScript) app, deployed for real: the API runs
+          on Render against a Postgres database (Neon), the web build is deployed on Vercel,
+          and the app itself also ships as an installable Android APK via EAS Build — not
+          just a localhost demo. Light/dark theming, animated charts, a SendGrid-backed
+          forgot-password flow, CSV export, and quick-add templates round out the UX.
+        </p>
+
+            <div class="project-gallery">
+          <figure>
+            <img src="assets/screenshots/expense-tracker/login.png" alt="Expense Tracker login screen: a dark glass card with a green accent glow over a wavy green gradient background, email and password fields, and a circular submit button" loading="lazy">
+            <figcaption>Login — glass card over a wavy gradient background</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/expense-tracker/register.png" alt="Expense Tracker registration screen with full name, email, and password fields over the same wavy green gradient background as the login screen" loading="lazy">
+            <figcaption>Register — full name, email, and password</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/expense-tracker/dashboard.png" alt="Expense Tracker dashboard with budget progress, recent expenses, and a category breakdown chart" loading="lazy">
+            <figcaption>Dashboard — budget tracking, recent expenses, category chart</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/expense-tracker/add-expense.png" alt="Expense Tracker add expense form with quick-add templates, category chips, and payment method selection" loading="lazy">
+            <figcaption>Add expense — quick-add templates, category chips</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/expense-tracker/budget.png" alt="Expense Tracker monthly budget screen with a 12-currency selector chip row and a live spending progress bar" loading="lazy">
+            <figcaption>Budget — per-user currency selection, live progress</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/expense-tracker/history.png" alt="Expense Tracker expense history screen with a search bar, category filter chips, and a CSV export button" loading="lazy">
+            <figcaption>History — search, category filters, CSV export</figcaption>
+          </figure>
+        </div>
+
+            <ul class="project-features">
+          <li>JWT-authenticated Flask REST API (SQLAlchemy + Flask-Migrate) against Postgres, deployed on Render via Docker</li>
+          <li>React Native / Expo mobile app — bottom-tab navigation, animated dashboard charts, category filtering, budget tracking</li>
+          <li>Per-user currency preference (12 ISO 4217 codes) persisted server-side, driving every amount shown across the app</li>
+          <li>Light/dark theme with persisted preference, swipe-to-delete on native (a dedicated delete action on web), CSV export, pull-to-refresh, and haptic feedback</li>
+          <li>Forgot/reset password flow — a SendGrid-emailed one-time code, hashed and single-use server-side, no account enumeration</li>
+          <li>Real Android APK built and distributed via EAS Build, not just an Expo Go preview</li>
+          <li>Web build (Expo for Web) deployed on Vercel, hitting the same Flask API through a locked-down CORS allowlist</li>
+          <li>CORS allowlist and per-endpoint rate limiting on auth routes; pytest suite covering auth, ownership isolation, and CRUD</li>
+        </ul>
+          </div>
+        </details>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>&copy; 2026 Dondie Godwin Gatan &middot; <a href="https://github.com/DondieGatan" target="_blank" rel="noopener">GitHub</a> &middot; <a href="https://www.linkedin.com/in/dondie-godwin-gatan" target="_blank" rel="noopener">LinkedIn</a></p>
+  <p class="footer-note">Built with vanilla HTML, CSS &amp; JavaScript — no framework, by choice.</p>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="site.js"></script>
+</body>
+</html>

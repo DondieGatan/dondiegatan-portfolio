@@ -162,8 +162,8 @@
     var dragging = false, startX = 0, startPos = 0, moved = 0, lastX = 0, lastT = 0, vel = 0, raf = 0, wheelLock = 0;
 
     // lookup tables keyed by distance from the centre: 0, 1, 2, 2.6
-    var DESK = { x: [0, 60, 94, 114], rot: [0, 26, 34, 38], sc: [1, 0.82, 0.66, 0.56], op: [1, 0.92, 0.5, 0] };
-    var MOB = { x: [0, 66, 100, 118], rot: [0, 14, 20, 24], sc: [1, 0.8, 0.64, 0.52], op: [1, 0.7, 0.25, 0] };
+    var DESK = { x: [0, 60, 94, 114], rot: [0, 26, 34, 38], sc: [1, 0.82, 0.66, 0.56], op: [1, 1, 0.5, 0] };
+    var MOB = { x: [0, 66, 100, 118], rot: [0, 14, 20, 24], sc: [1, 0.8, 0.64, 0.52], op: [1, 1, 0.3, 0] };
 
     function wrapD(d) { d = ((d % n) + n) % n; return d > n / 2 ? d - n : d; }
     function seg(a) { if (a <= 1) return [0, a]; if (a <= 2) return [1, a - 1]; return [2, Math.min((a - 2) / 0.6, 1)]; }

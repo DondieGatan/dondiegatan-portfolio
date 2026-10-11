@@ -61,28 +61,60 @@
 
 <main id="main">
   <section class="hero">
-    <div class="hero-inner">
-      <p class="eyebrow rise" style="--i:0">Software Engineer · Full-Stack &amp; AI</p>
-      <h1 class="rise" style="--i:1">I build full-stack apps that turn <span class="grad">messy real-world data</span> into something useful.</h1>
-      <p class="hero-sub rise" style="--i:2">
-        Software Engineering graduate focused on full-stack web development and applied AI,
-        Microsoft Certified in Azure AI (AI-103). My final year project, Smart Resume Analyser,
-        parses real resume documents with OCR and NLP to score and give feedback on them —
-        end to end, from upload to database to dashboard. I've also shipped a RAG chatbot for a
-        dental clinic platform and a live ordering site for a real cafe.
-      </p>
-      <p class="hero-education rise" style="--i:3">🎓 BEng (Hons) Software Engineering — University of Greater Manchester, Ras Al Khaimah, UAE (Graduated 2026)</p>
-      <div class="hero-actions rise" style="--i:4">
-        <a href="projects.html" class="btn btn-primary">View Projects</a>
-        <a href="assets/Dondie_Godwin_Gatan_CV.pdf" target="_blank" rel="noopener" class="btn btn-ghost">Download CV ↓</a>
-        <a href="contact.html" class="btn btn-ghost">Contact Me</a>
+    <div class="hero-inner hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow rise" style="--i:0">Software Engineer · Full-Stack &amp; AI</p>
+        <h1 class="rise" style="--i:1">Hi, I'm Dondie.<br>I build <span class="grad">useful software</span> people actually use.</h1>
+        <p class="hero-sub rise" style="--i:2">
+          Microsoft Certified Azure AI developer based in Sharjah, UAE. I design, build and ship
+          full-stack web and mobile apps with AI built in, from the database to the dashboard.
+        </p>
+        <p class="hero-education rise" style="--i:3">🎓 BEng (Hons) Software Engineering — University of Greater Manchester, Ras Al Khaimah, UAE (Graduated 2026)</p>
+        <div class="hero-actions rise" style="--i:4">
+          <a href="projects.html" class="btn btn-primary">View Projects</a>
+          <a href="assets/Dondie_Godwin_Gatan_CV.pdf" target="_blank" rel="noopener" class="btn btn-ghost">Download CV ↓</a>
+          <a href="contact.html" class="btn btn-ghost">Contact Me</a>
+        </div>
+        <ul class="stack-line rise" style="--i:5" aria-label="Main technologies">
+          <li>Python</li><li>React</li><li>Flask</li><li>PostgreSQL</li><li>Azure AI</li>
+        </ul>
       </div>
-      <ul class="stats rise" style="--i:5">
-        <li class="stat"><strong>5</strong><span>projects, all deployed live</span></li>
-        <li class="stat"><strong>382</strong><span>automated tests in Floss Clinic</span></li>
-        <li class="stat"><strong>AI-103</strong><span>Microsoft Certified, Azure AI</span></li>
-      </ul>
+
+      <div class="portrait rise" style="--i:2">
+        <div class="portrait-ring" aria-hidden="true"></div>
+        <div class="portrait-photo"><img src="assets/profile.jpg" alt="Portrait of Dondie Godwin Gatan" width="600" height="600" decoding="async"></div>
+        <div class="fl fl-1"><b>AI-103</b><span>Microsoft Certified</span></div>
+        <div class="fl fl-2"><b>382</b><span>automated tests</span></div>
+        <div class="fl fl-3"><b>5</b><span>live projects</span></div>
+        <div class="fl fl-4"><i class="dot" aria-hidden="true"></i><span>Open to work · Dubai</span></div>
+      </div>
     </div>
+  </section>
+
+  <section class="showcase" aria-labelledby="showcase-h">
+    <div class="showcase-head">
+      <p class="section-eyebrow reveal">Selected work</p>
+      <h2 class="showcase-title reveal" id="showcase-h">Five live projects. <span class="grad">Real users, real data, real deploys.</span></h2>
+      <p class="showcase-sub reveal">These are things you can open and use right now.</p>
+    </div>
+    <div class="stage reveal">
+      <a class="frame fr-l" href="projects.html#floss-clinic" aria-label="Floss Clinic: dental clinic platform">
+        <div class="fbar"><i></i><i></i><i></i></div>
+        <img class="fimg" src="assets/screenshots/floss-clinic/staff-dashboard.webp" alt="Floss Clinic staff dashboard" width="1200" height="800" loading="lazy">
+      </a>
+      <a class="frame fr-r" href="projects.html#resume-analyser" aria-label="Smart Resume Analyser">
+        <div class="fbar"><i></i><i></i><i></i></div>
+        <img class="fimg" src="assets/screenshots/result.webp" alt="Smart Resume Analyser scored result" width="1200" height="800" loading="lazy">
+      </a>
+      <a class="frame fr-c" href="projects.html#mori-matcha" aria-label="Mori Matcha: live cafe website">
+        <div class="fbar"><i></i><i></i><i></i></div>
+        <img class="fimg" src="assets/screenshots/mori-matcha/home.jpg" alt="Mori Matcha homepage" width="1200" height="800" loading="lazy">
+      </a>
+      <span class="stage-tag st-c"><i class="dot" aria-hidden="true"></i>Live · Mori Matcha</span>
+      <span class="stage-tag st-l">Floss Clinic</span>
+      <span class="stage-tag st-r">Resume Analyser</span>
+    </div>
+    <div class="showcase-cta reveal"><a href="projects.html" class="btn btn-primary">Explore all projects →</a></div>
   </section>
 
   <section class="section">

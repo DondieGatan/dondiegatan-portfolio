@@ -541,6 +541,92 @@ html.theme-fade, html.theme-fade *, html.theme-fade *::before, html.theme-fade *
 ::view-transition-new(root) { z-index: 9999; }
 
 /* =========================================================
+   HOME: portrait hero + project showcase
+   ========================================================= */
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr); gap: 56px; align-items: center; }
+.hero-grid h1 { font-size: clamp(2.1rem, 4.4vw, 3.5rem); max-width: 640px; }
+.hero-grid .hero-actions { margin-bottom: 30px; }
+.stack-line { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 22px; font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; }
+.stack-line li { position: relative; }
+.stack-line li + li::before { content: ""; position: absolute; left: -12px; top: 50%; width: 4px; height: 4px; border-radius: 50%; background: var(--accent-2); transform: translateY(-50%); }
+
+.portrait { position: relative; width: 100%; max-width: 470px; margin-left: auto; aspect-ratio: 470 / 560; }
+.portrait-ring { position: absolute; inset: 0; border-radius: 44px; overflow: hidden; }
+.portrait-ring::before { content: ""; position: absolute; inset: -50%; background: conic-gradient(from 0deg, var(--accent), var(--accent-2), var(--accent)); animation: spin 9s linear infinite; }
+.portrait-photo { position: absolute; inset: 3px; border-radius: 41px; overflow: hidden; background: var(--surface-solid); }
+.portrait-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; }
+
+.fl {
+  position: absolute; padding: 11px 16px; border-radius: 16px; font-size: 0.85rem;
+  background: color-mix(in srgb, var(--surface-solid) 88%, transparent); border: 1px solid var(--border);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: var(--shadow-lg);
+  animation: floaty 6s ease-in-out infinite alternate;
+}
+.fl b { display: block; font-family: var(--font-heading); font-size: 1.3rem; line-height: 1.2; }
+.fl span { color: var(--text-muted); font-size: 0.78rem; }
+.fl-1 { left: -56px; top: 12%; }
+.fl-2 { right: -44px; top: 36%; animation-delay: -1.5s; }
+.fl-3 { left: -36px; bottom: 21%; animation-delay: -3s; }
+.fl-4 { right: -26px; bottom: 8%; display: flex; align-items: center; gap: 9px; animation-delay: -4.5s; }
+.fl-4 span { color: var(--text); font-size: 0.88rem; }
+@keyframes floaty { from { transform: translateY(0); } to { transform: translateY(-10px); } }
+.dot { width: 10px; height: 10px; border-radius: 50%; background: #34d399; box-shadow: 0 0 12px #34d399; flex: none; display: inline-block; }
+
+.showcase { position: relative; padding: 30px 24px 70px; overflow: hidden; }
+.showcase-head { max-width: 900px; margin: 0 auto; text-align: center; }
+.showcase-title { font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.1; letter-spacing: -0.03em; margin: 0 0 16px; }
+.showcase-sub { color: var(--text-muted); max-width: 560px; margin: 0 auto; font-size: 1.05rem; }
+
+.stage { position: relative; max-width: var(--max-width); height: 450px; margin: 56px auto 0; perspective: 1600px; }
+.frame {
+  position: absolute; display: block; overflow: hidden; border-radius: 14px; text-decoration: none;
+  border: 1px solid var(--border); background: var(--surface-solid); box-shadow: var(--shadow-lg);
+  transition: transform 0.55s cubic-bezier(.2, .7, .2, 1), box-shadow 0.4s ease, border-color 0.3s ease, opacity 0.3s ease;
+}
+.fbar { display: flex; gap: 6px; padding: 10px 14px; border-bottom: 1px solid var(--border); }
+.fbar i { width: 9px; height: 9px; border-radius: 50%; background: color-mix(in srgb, var(--text-muted) 45%, transparent); }
+.fimg { width: 100%; height: calc(100% - 30px); object-fit: cover; object-position: top; display: block; }
+.fr-c { left: 50%; top: 0; width: min(660px, 62%); height: 430px; transform: translateX(-50%); z-index: 3; }
+.fr-l { left: 0; top: 64px; width: 41%; height: 296px; transform: rotateY(24deg) rotateZ(-2deg); opacity: 0.92; transform-origin: right center; }
+.fr-r { right: 0; top: 64px; width: 41%; height: 296px; transform: rotateY(-24deg) rotateZ(2deg); opacity: 0.92; transform-origin: left center; }
+.fr-c:hover { transform: translateX(-50%) translateY(-10px); border-color: color-mix(in srgb, var(--accent) 55%, var(--border)); }
+.stage:hover .fr-l { transform: rotateY(14deg) rotateZ(-1deg) translateX(14px); }
+.stage:hover .fr-r { transform: rotateY(-14deg) rotateZ(1deg) translateX(-14px); }
+.fr-l:hover, .fr-r:hover { opacity: 1; border-color: color-mix(in srgb, var(--accent) 55%, var(--border)); }
+
+.stage-tag {
+  position: absolute; z-index: 9; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap;
+  padding: 8px 14px; border-radius: 999px; font-size: 0.8rem; font-weight: 600; color: var(--accent-2);
+  background: color-mix(in srgb, var(--surface-solid) 92%, transparent); border: 1px solid color-mix(in srgb, var(--accent-2) 50%, var(--border));
+}
+.st-c { left: 50%; top: -14px; transform: translateX(-50%); }
+.st-l { left: 3%; top: 26px; }
+.st-r { right: 3%; top: 26px; }
+.showcase-cta { text-align: center; margin-top: 44px; }
+
+@media (max-width: 1180px) {
+  .fl-1 { left: -22px; } .fl-2 { right: -14px; } .fl-3 { left: -18px; } .fl-4 { right: -8px; }
+}
+@media (max-width: 980px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+  .portrait { margin: 0 auto; max-width: 400px; }
+  .fl-1 { left: 8px; } .fl-2 { right: 8px; } .fl-3 { left: 8px; } .fl-4 { right: 8px; }
+}
+@media (max-width: 900px) {
+  .stage { height: auto; margin-top: 40px; perspective: none; }
+  .fr-c { position: relative; left: auto; top: auto; width: 100%; height: auto; aspect-ratio: 16 / 10; transform: none; }
+  .fr-c:hover { transform: translateY(-6px); }
+  .fr-l, .fr-r, .st-l, .st-r { display: none; }
+  .st-c { top: -14px; }
+}
+@media (max-width: 640px) {
+  .stack-line { font-size: 1rem; gap: 6px 18px; }
+  .fl { padding: 8px 12px; border-radius: 13px; }
+  .fl b { font-size: 1.05rem; }
+  .showcase { padding: 20px 20px 56px; }
+}
+
+/* =========================================================
    Responsive
    ========================================================= */
 @media (max-width: 900px) {
@@ -590,5 +676,6 @@ html.theme-fade, html.theme-fade *, html.theme-fade *::before, html.theme-fade *
   .bg-glow, .grad, .avatar-ring, .caret, .timeline::before, .chip, .project-thumb::after,
   body[data-page="profile"] .bg-glow::before, body[data-page="profile"] .bg-glow::after { animation: none !important; }
   .btn::after { display: none; }
+  .portrait-ring::before, .fl { animation: none !important; }
   .theme-toggle, .theme-toggle * { transition: none !important; }
 }

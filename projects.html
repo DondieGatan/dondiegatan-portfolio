@@ -18,9 +18,8 @@
 <meta name="twitter:image" content="https://dondiegatan.github.io/dondiegatan-portfolio/assets/og-image.png?v=2">
 <script>(function(){var d=document.documentElement,t=null;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=null;if(t)d.setAttribute('data-theme',t);d.setAttribute('data-theme-effective',t||(window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'))})();</script>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/sora.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
 <noscript><style>.loader,.curtain{display:none!important}.rise,.reveal{opacity:1!important;transform:none!important}</style></noscript>
 </head>
@@ -76,11 +75,12 @@
 
   <section class="section" style="padding-top:30px">
     <div class="section-inner">
+      <h2 class="sr-only">All projects</h2>
       <article class="project reveal" id="resume-analyser" data-cat="ai web">
         <span class="project-no" aria-hidden="true">01</span>
         <div class="project-top">
           <div class="project-thumb" aria-hidden="true">
-            <img src="assets/screenshots/result.webp" alt="" loading="lazy">
+            <img src="assets/screenshots/result.webp" srcset="assets/screenshots/result-800.webp 800w, assets/screenshots/result.webp 1280w" sizes="(max-width: 860px) 460px, 300px" alt="" loading="lazy" width="800" height="500">
           </div>
           <div class="project-body">
             <div>
@@ -169,7 +169,7 @@
         <span class="project-no" aria-hidden="true">02</span>
         <div class="project-top">
           <div class="project-thumb" aria-hidden="true">
-            <img src="assets/screenshots/mori-matcha/home.jpg" alt="" loading="lazy">
+            <img src="assets/screenshots/mori-matcha/home.webp" alt="" loading="lazy" width="800" height="500">
           </div>
           <div class="project-body">
             <div>
@@ -240,7 +240,7 @@
         <span class="project-no" aria-hidden="true">03</span>
         <div class="project-top">
           <div class="project-thumb" aria-hidden="true">
-            <img src="assets/screenshots/floss-clinic/staff-dashboard.webp" alt="" loading="lazy">
+            <img src="assets/screenshots/floss-clinic/staff-dashboard.webp" srcset="assets/screenshots/floss-clinic/staff-dashboard-800.webp 800w, assets/screenshots/floss-clinic/staff-dashboard.webp 2133w" sizes="(max-width: 860px) 460px, 300px" alt="" loading="lazy" width="800" height="500">
           </div>
           <div class="project-body">
             <div>
@@ -320,7 +320,7 @@
         <span class="project-no" aria-hidden="true">04</span>
         <div class="project-top">
           <div class="project-thumb" aria-hidden="true">
-            <img src="assets/screenshots/library/dashboard.webp" alt="" loading="lazy">
+            <img src="assets/screenshots/library/dashboard.webp" srcset="assets/screenshots/library/dashboard-800.webp 800w, assets/screenshots/library/dashboard.webp 2000w" sizes="(max-width: 860px) 460px, 300px" alt="" loading="lazy" width="800" height="500">
           </div>
           <div class="project-body">
             <div>
@@ -391,7 +391,7 @@
         <span class="project-no" aria-hidden="true">05</span>
         <div class="project-top">
           <div class="project-thumb" aria-hidden="true">
-            <img src="assets/screenshots/expense-tracker/dashboard.png" alt="" loading="lazy">
+            <img src="assets/screenshots/expense-tracker/dashboard.webp" srcset="assets/screenshots/expense-tracker/dashboard-800.webp 800w, assets/screenshots/expense-tracker/dashboard.webp 1250w" sizes="(max-width: 860px) 460px, 300px" alt="" loading="lazy" width="800" height="500">
           </div>
           <div class="project-body">
             <div>
@@ -442,7 +442,7 @@
             <figcaption>Register — full name, email, and password</figcaption>
           </figure>
           <figure>
-            <img src="assets/screenshots/expense-tracker/dashboard.png" alt="Expense Tracker dashboard with budget progress, recent expenses, and a category breakdown chart" loading="lazy">
+            <img src="assets/screenshots/expense-tracker/dashboard.webp" alt="Expense Tracker dashboard with budget progress, recent expenses, and a category breakdown chart" loading="lazy">
             <figcaption>Dashboard — budget tracking, recent expenses, category chart</figcaption>
           </figure>
           <figure>
@@ -480,6 +480,6 @@
   <p>&copy; 2026 Dondie Godwin Gatan &middot; <a href="https://github.com/DondieGatan" target="_blank" rel="noopener">GitHub</a> &middot; <a href="https://www.linkedin.com/in/dondie-godwin-gatan" target="_blank" rel="noopener">LinkedIn</a></p>
 </footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="site.js"></script>
+<script src="site.js" defer></script>
 </body>
 </html>

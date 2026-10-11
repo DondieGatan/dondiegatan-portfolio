@@ -18,9 +18,9 @@
 <meta name="twitter:image" content="https://dondiegatan.github.io/dondiegatan-portfolio/assets/og-image.png?v=2">
 <script>(function(){var d=document.documentElement,t=null;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=null;if(t)d.setAttribute('data-theme',t);d.setAttribute('data-theme-effective',t||(window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'))})();</script>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/sora.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/playfair.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
 <noscript><style>.loader,.curtain{display:none!important}.rise,.reveal{opacity:1!important;transform:none!important}</style></noscript>
 </head>
@@ -74,7 +74,7 @@
         <span class="avatar-ring" aria-hidden="true"></span>
         <div class="avatar-inner">
           <span class="avatar-mono" aria-hidden="true">DG</span>
-          <img src="assets/profile.jpg" alt="Portrait of Dondie Godwin Gatan" width="600" height="600" decoding="async">
+          <img src="assets/profile.jpg" alt="Portrait of Dondie Godwin Gatan" width="600" height="600" decoding="async" fetchpriority="high">
         </div>
       </div>
       <div class="side-name">
@@ -113,7 +113,7 @@
         <div class="timeline">
           <div class="tl-item reveal"><div class="tl-card">
             <p class="tl-when">Sep 2026 — Present · Remote</p>
-            <h4>Freelance Full-Stack Developer</h4>
+            <h3>Freelance Full-Stack Developer</h3>
             <p class="tl-org">Mori Matcha Home Cafe · Freelance</p>
             <p>Designed and deployed a production website for a real cafe business using React/Vite, Vercel Serverless Functions, and PostgreSQL.</p>
             <ul>
@@ -125,7 +125,7 @@
           </div></div>
           <div class="tl-item reveal"><div class="tl-card">
             <p class="tl-when">Nov 2025 — Jul 2026 · Dubai, UAE · Remote</p>
-            <h4>Data Analyst</h4>
+            <h3>Data Analyst</h3>
             <p class="tl-org">MetLife · Internship</p>
             <p>Supported data analysis and reporting for a global insurance provider during a 9-month remote Data Analyst internship.</p>
             <ul>
@@ -143,7 +143,7 @@
         <div class="timeline">
           <div class="tl-item reveal"><div class="tl-card">
             <p class="tl-when">Sep 2023 — Sep 2026</p>
-            <h4>BEng (Hons) Software Engineering</h4>
+            <h3>BEng (Hons) Software Engineering</h3>
             <p class="tl-org">University of Greater Manchester · Ras Al Khaimah, UAE · Graduated 2026</p>
             <ul>
               <li>Final Year Project: Smart Resume Analyser, an AI-assisted resume scoring platform using OCR, NLP, ATS-compatibility simulation, job-description matching, and an analytics dashboard.</li>
@@ -152,7 +152,7 @@
           </div></div>
           <div class="tl-item reveal"><div class="tl-card">
             <p class="tl-when">2021 — 2022</p>
-            <h4>Pearson BTEC Level 3 International Diploma, Engineering</h4>
+            <h3>Pearson BTEC Level 3 International Diploma, Engineering</h3>
             <p class="tl-org">Western International College · Ras Al Khaimah, UAE · Double Merit</p>
             <p>A college in partnership with University of Greater Manchester, offering United Kingdom-accredited foundation level courses.</p>
             <ul>
@@ -162,7 +162,7 @@
           </div></div>
           <div class="tl-item reveal"><div class="tl-card">
             <p class="tl-when">2020 — 2021</p>
-            <h4>Senior High School, STEM Strand (With Honors)</h4>
+            <h3>Senior High School, STEM Strand (With Honors)</h3>
             <p class="tl-org">Far Eastern University · Philippines</p>
           </div></div>
         </div>
@@ -172,10 +172,10 @@
         <p class="section-eyebrow reveal">Certifications</p>
         <h2 class="section-title reveal" id="cert-h">Credentials</h2>
         <div class="cert-grid">
-          <div class="cert reveal"><p class="tl-when">Issued Sep 2026 · Expires Sep 2027</p><h4>Microsoft Certified: Azure AI Apps and Agents Developer Associate (AI-103)</h4><p>Microsoft</p></div>
-          <div class="cert reveal"><p class="tl-when">Microsoft</p><h4>Microsoft Certified: Azure AI Fundamentals (AI-901)</h4><p>Microsoft</p></div>
-          <div class="cert reveal"><p class="tl-when">Issued Mar 2026</p><h4>AI Automation Specialist</h4><p>Jobescape · n8n workflow automation</p></div>
-          <div class="cert reveal"><p class="tl-when">Issued Sep 2026</p><h4>Delegate, Global Virtual Summit 2026</h4><p>Global Emerging Leadership Programs (GELP)</p></div>
+          <div class="cert reveal"><p class="tl-when">Issued Sep 2026 · Expires Sep 2027</p><h3>Microsoft Certified: Azure AI Apps and Agents Developer Associate (AI-103)</h3><p>Microsoft</p></div>
+          <div class="cert reveal"><p class="tl-when">Microsoft</p><h3>Microsoft Certified: Azure AI Fundamentals (AI-901)</h3><p>Microsoft</p></div>
+          <div class="cert reveal"><p class="tl-when">Issued Mar 2026</p><h3>AI Automation Specialist</h3><p>Jobescape · n8n workflow automation</p></div>
+          <div class="cert reveal"><p class="tl-when">Issued Sep 2026</p><h3>Delegate, Global Virtual Summit 2026</h3><p>Global Emerging Leadership Programs (GELP)</p></div>
         </div>
       </section>
 
@@ -183,9 +183,9 @@
         <p class="section-eyebrow reveal">Honors &amp; Awards</p>
         <h2 class="section-title reveal" id="award-h">Recognition</h2>
         <div class="cert-grid">
-          <div class="cert reveal"><p class="tl-when">Jan 2021</p><h4>Academic Excellence Award</h4><p>Far Eastern University</p></div>
-          <div class="cert reveal"><p class="tl-when">Jan 2021</p><h4>Best in Research</h4><p>Far Eastern University</p></div>
-          <div class="cert reveal"><p class="tl-when">Jan 2021</p><h4>Enthusiastic Learner Award</h4><p>Far Eastern University</p></div>
+          <div class="cert reveal"><p class="tl-when">Jan 2021</p><h3>Academic Excellence Award</h3><p>Far Eastern University</p></div>
+          <div class="cert reveal"><p class="tl-when">Jan 2021</p><h3>Best in Research</h3><p>Far Eastern University</p></div>
+          <div class="cert reveal"><p class="tl-when">Jan 2021</p><h3>Enthusiastic Learner Award</h3><p>Far Eastern University</p></div>
         </div>
       </section>
     </div>
@@ -196,6 +196,6 @@
   <p>&copy; 2026 Dondie Godwin Gatan &middot; <a href="https://github.com/DondieGatan" target="_blank" rel="noopener">GitHub</a> &middot; <a href="https://www.linkedin.com/in/dondie-godwin-gatan" target="_blank" rel="noopener">LinkedIn</a></p>
 </footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="site.js"></script>
+<script src="site.js" defer></script>
 </body>
 </html>

@@ -11,7 +11,7 @@
     root.classList.add('loaded');
     startReveal();
   }
-  if (reduceMotion) { markLoaded(); } else { setTimeout(markLoaded, 1150); }
+  if (reduceMotion) { markLoaded(); } else { setTimeout(markLoaded, 900); }
 
   /* ---------- Page leave transition ---------- */
   document.addEventListener('click', function (e) {

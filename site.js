@@ -196,8 +196,17 @@
       var el = slides[idx];
       capTitle.textContent = el.getAttribute('data-title');
       capSub.textContent = el.getAttribute('data-sub');
-      capDemo.setAttribute('href', el.getAttribute('data-live'));
-      capDemo.setAttribute('aria-label', 'Open the live demo of ' + el.getAttribute('data-title'));
+      if (el.getAttribute('data-paused')) {
+        capDemo.setAttribute('href', 'projects.html#' + el.getAttribute('data-id'));
+        capDemo.removeAttribute('target');
+        capDemo.textContent = 'Watch the demo ▶';
+        capDemo.setAttribute('aria-label', 'See the demo video of ' + el.getAttribute('data-title') + ' (live demo is paused)');
+      } else {
+        capDemo.setAttribute('href', el.getAttribute('data-live'));
+        capDemo.setAttribute('target', '_blank');
+        capDemo.textContent = 'Live Demo ↗';
+        capDemo.setAttribute('aria-label', 'Open the live demo of ' + el.getAttribute('data-title'));
+      }
       capMore.setAttribute('href', 'projects.html#' + el.getAttribute('data-id'));
       cap.classList.remove('swap'); void cap.offsetWidth; cap.classList.add('swap');
     }

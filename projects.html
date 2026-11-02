@@ -266,9 +266,9 @@
             <div>
             <span class="featured-badge">★ Featured</span>
             <h3>Floss Clinic</h3>
-            <p class="project-tagline">Dental clinic platform with real conflict-safe booking and a grounded RAG chatbot</p>
+            <p class="project-tagline">Dental clinic platform with real conflict-safe booking, a grounded RAG chatbot and an AI booking assistant</p>
           </div>
-            <p class="project-lede">Dental clinic platform with database-enforced conflict-safe booking, two-factor sign-in, and a RAG chatbot grounded in the clinic's own documents.</p>
+            <p class="project-lede">Dental clinic platform with database-enforced conflict-safe booking, two-factor sign-in, a RAG chatbot grounded in the clinic's own documents, and an AI assistant that proposes bookings a patient confirms.</p>
             <div class="project-stack">
           <span class="tag">Python</span>
           <span class="tag">Flask</span>
@@ -276,11 +276,13 @@
           <span class="tag">React</span>
           <span class="tag">Vite</span>
           <span class="tag">sentence-transformers</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Gemini</span>
         </div>
             <div class="try-it">
               <p class="try-it-title"><span aria-hidden="true">▶</span> How to try it</p>
               <p class="try-it-body">Sign in with <code>patient@floss.demo</code> / <code>password123</code>, or create an account.</p>
-              <!-- DEMO-PAUSED --><p class="try-it-note">The live demo is paused until about November 1 (free-hosting monthly limit). Please watch the demo video instead.</p><!-- /DEMO-PAUSED:Staff and admin accounts need two-factor codes, so the patient view is the easy way in. -->
+              <p class="try-it-note">Staff and admin accounts need two-factor codes, so the patient view is the easy way in.</p>
               <button class="demo-open" type="button" data-video="assets/demos/floss-clinic.mp4" data-poster="assets/demos/floss-clinic.jpg" data-title="Floss Clinic" data-tall="0">
                 <img src="assets/demos/floss-clinic.jpg" alt="" loading="lazy" width="320" height="200">
                 <span class="demo-play" aria-hidden="true">▶</span>
@@ -289,7 +291,7 @@
             </div>
             <div class="project-actions">
               <div class="project-links">
-            <!-- DEMO-PAUSED --><span class="btn btn-small btn-paused" role="note">Live demo paused</span>
+            <a href="https://floss-beta.vercel.app" target="_blank" rel="noopener" class="btn btn-small btn-primary">Live Demo ↗</a>
             <a href="https://github.com/DondieGatan/floss" target="_blank" rel="noopener" class="btn btn-small">Source Code ↗</a>
           </div>
             </div>
@@ -302,45 +304,66 @@
             <p class="project-desc">
           A full-stack dental clinic platform — appointment booking with genuine double-booking
           prevention, automatic confirmation and reminder emails, a staff-managed doctor directory,
-          patient records with role-based access, and a retrieval-augmented chatbot that only ever
-          answers from the clinic's own documents and refuses to give medical advice. Deployed live
-          (Vercel + Render), with 389 tests (275 backend, 114 frontend) and a CI pipeline running
+          patient records with role-based access, a retrieval-augmented chatbot that only ever
+          answers from the clinic's own documents and refuses to give medical advice, and an AI
+          assistant that can book, move or cancel a patient's own appointments — but only proposes,
+          so nothing changes until the patient presses Confirm. Redesigned end to end with a
+          responsive light and dark interface. Deployed live on Vercel (frontend and API) with
+          Postgres on Neon, with 605 tests (446 backend, 159 frontend) and a CI pipeline running
           both suites on every push.
         </p>
 
             <div class="project-gallery">
           <figure>
-            <img src="assets/screenshots/floss-clinic/login-2fa.webp" alt="Floss Clinic sign-in screen with a two-factor verification code prompt" loading="lazy">
-            <figcaption>Sign-in — two-factor verification, required for staff and admin accounts</figcaption>
+            <img src="assets/screenshots/floss-clinic/landing.webp" alt="Floss Clinic landing page with the headline Your Trusted Partner in Dental Care, a booking button and floating cards for the clinic assistant and a confirmed slot" loading="lazy">
+            <figcaption>Landing page — online booking and answers that cite their sources</figcaption>
           </figure>
           <figure>
-            <img src="assets/screenshots/floss-clinic/dentists.webp" alt="Floss Clinic dentist directory grid filterable by department, with a book appointment button on each card" loading="lazy">
-            <figcaption>Dentist directory — filter by specialty, book in a few clicks</figcaption>
+            <img src="assets/screenshots/floss-clinic/login-2fa.webp" alt="Floss Clinic two-factor verification screen asking for the six-digit authentication code" loading="lazy">
+            <figcaption>Sign-in — two-factor verification, required for staff, admin and owner accounts</figcaption>
           </figure>
           <figure>
-            <img src="assets/screenshots/floss-clinic/appointments-reschedule.webp" alt="Floss Clinic clinic-wide appointments list with Edit and Cancel actions on each row" loading="lazy">
-            <figcaption>Clinic-wide appointments — reschedule with live availability, not just cancel-and-rebook</figcaption>
+            <img src="assets/screenshots/floss-clinic/patient-dashboard.webp" alt="Floss Clinic patient dashboard with a welcome banner, the next appointment, upcoming and past visit counts and a list of upcoming appointments with Edit and Cancel buttons" loading="lazy">
+            <figcaption>Patient dashboard — next appointment, upcoming visits, edit or cancel in one click</figcaption>
           </figure>
           <figure>
-            <img src="assets/screenshots/floss-clinic/staff-dashboard.webp" alt="Floss Clinic staff dashboard with a weekly appointments bar chart and today's schedule" loading="lazy">
-            <figcaption>Staff dashboard — role-scoped navigation and a weekly appointments chart</figcaption>
+            <img src="assets/screenshots/floss-clinic/dentists.webp" alt="Floss Clinic dentist directory as a grid of dentist cards with a department filter and a Book appointment button on each" loading="lazy">
+            <figcaption>Dentist directory — filter by department, book in a few clicks</figcaption>
           </figure>
           <figure>
-            <img src="assets/screenshots/floss-clinic/team-roles.webp" alt="Floss Clinic Team and Roles page listing every staff account with a role dropdown and a recent activity audit log" loading="lazy">
-            <figcaption>Team &amp; Roles — grant or revoke access, with a full audit trail</figcaption>
+            <img src="assets/screenshots/floss-clinic/booking.webp" alt="Floss Clinic booking page with a dentist profile card beside a three-step panel: choose a date, choose a time grouped by morning and afternoon, then a reason for the visit" loading="lazy">
+            <figcaption>Booking — pick a day, then a time from live availability; a taken slot can never be double-booked</figcaption>
           </figure>
           <figure>
-            <img src="assets/screenshots/floss-clinic/knowledge-base.webp" alt="Floss Clinic Knowledge Base page showing an auto-generated Dentist and Department Directory document ready for the chatbot to cite" loading="lazy">
-            <figcaption>Knowledge Base — an auto-regenerating directory keeps the chatbot's answers current</figcaption>
+            <img src="assets/screenshots/floss-clinic/staff-dashboard.webp" alt="Floss Clinic staff dashboard with appointment and chair counts, a weekly appointments bar chart and today's schedule" loading="lazy">
+            <figcaption>Staff dashboard — role-scoped navigation, a weekly appointments chart and today's schedule</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/floss-clinic/appointments-reschedule.webp" alt="Floss Clinic clinic-wide appointments list filtered to one day, with Edit and Cancel actions on each row" loading="lazy">
+            <figcaption>Clinic-wide appointments — filter by day or dentist, reschedule with live availability</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/floss-clinic/team-roles.webp" alt="Floss Clinic Team and Roles page listing every staff account with a role dropdown" loading="lazy">
+            <figcaption>Team &amp; Roles — grant or revoke staff access; admin accounts are owner-only</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/floss-clinic/knowledge-base.webp" alt="Floss Clinic Knowledge Base page listing an auto-generated Dentist and Department Directory plus uploaded policy documents, each with a Chat button" loading="lazy">
+            <figcaption>Knowledge Base — an auto-regenerating directory and uploaded policies keep the chatbot's answers current</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/floss-clinic/staff-dashboard-dark.webp" alt="Floss Clinic staff dashboard in dark mode" loading="lazy">
+            <figcaption>Dark mode — the whole app switches between light and dark</figcaption>
           </figure>
         </div>
 
             <ul class="project-features">
           <li>Appointment booking that rejects real conflicts via a half-open interval check, enforced at the database with a partial unique index — not just an application-level check</li>
           <li>A RAG chatbot grounded in the clinic's own documents (sentence-transformer embeddings, cosine retrieval, a confidence threshold below which it says "I don't know" instead of guessing), streamed token-by-token</li>
-          <li>An auto-regenerating "Dentist & Department Directory" document, chunked one entity at a time so retrieval doesn't dilute across multiple doctors — the chatbot's knowledge base never goes stale when staff update the directory</li>
+          <li>An AI booking assistant built as a propose-then-confirm tool loop: the model looks up dentists and open slots but can only propose a change — nothing is written until the patient presses Confirm, which re-checks the slot. Identity comes from the login token, never the model, and Gemini, Groq and Azure OpenAI sit behind one adapter with rate-limit failover</li>
+          <li>Guardrails enforced in code, not just the prompt: security probes, instruction-extraction attempts and requests for other people's data get a fixed reply without reaching the model, and an output guard cuts off any reply that would leak a key, token, database URL or the prompt</li>
+          <li>An auto-regenerating "Dentist &amp; Department Directory" document, chunked one entity at a time so retrieval doesn't dilute across multiple doctors — the chatbot's knowledge base never goes stale when staff update the directory</li>
           <li>Role-based access (patient / staff / admin / owner) as a signed JWT claim, refreshed on token refresh so a role change takes effect on next login</li>
-          <li>389 tests (275 backend + 114 frontend), GitHub Actions CI on every push</li>
+          <li>605 tests (446 backend + 159 frontend), GitHub Actions CI on every push</li>
         </ul>
           </div>
         </details>

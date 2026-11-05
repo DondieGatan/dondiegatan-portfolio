@@ -85,9 +85,9 @@
           <div class="project-body">
             <div>
             <h3>Smart Resume Analyser</h3>
-            <p class="project-tagline">AI-assisted resume scoring, feedback, and job-matching platform</p>
+            <p class="project-tagline">AI-assisted resume scoring, writing tools, and job-matching platform</p>
           </div>
-            <p class="project-lede">Upload a PDF or scanned resume and get an OCR + NLP score, an ATS-compatibility check, job-description matching, and an in-app Gemini assistant.</p>
+            <p class="project-lede">Upload a PDF, Word or scanned resume and get an OCR + NLP score, an ATS-compatibility check and job-description matching, plus Gemini-powered tools: cover letter, LinkedIn profile, interview prep, and a resume builder with an AI assistant.</p>
             <div class="project-stack">
           <span class="tag">Python</span>
           <span class="tag">Flask</span>
@@ -102,8 +102,8 @@
         </div>
             <div class="try-it">
               <p class="try-it-title"><span aria-hidden="true">▶</span> How to try it</p>
-              <p class="try-it-body">Create a free account (no email confirmation) and upload any resume.</p>
-              <p class="try-it-note">It runs on a free server that is kept awake; if the first load is slow, give it up to a minute.</p>
+              <p class="try-it-body">Create a free account (no email confirmation), upload any resume, then open AI Tools and the Resume Builder.</p>
+              <p class="try-it-note">It runs on a free server that is kept awake, so the first load can take up to a minute. The AI features use Google's free Gemini tier and can say "busy" at peak times; the demo video shows them working.</p>
               <button class="demo-open" type="button" data-video="assets/demos/resume-analyser.mp4" data-poster="assets/demos/resume-analyser.jpg" data-title="Smart Resume Analyser" data-tall="0">
                 <img src="assets/demos/resume-analyser.jpg" alt="" loading="lazy" width="320" height="200">
                 <span class="demo-play" aria-hidden="true">▶</span>
@@ -123,18 +123,21 @@
           <summary><span class="when-closed">View details</span><span class="when-open">Hide details</span></summary>
           <div class="project-more-body">
             <p class="project-desc">
-          A full-stack Flask application that takes a candidate's PDF or scanned-image resume,
+          A full-stack Flask application that takes a candidate's PDF, Word or scanned-image resume,
           extracts its text via OCR and PDF parsing, and analyses it with NLP to produce a scored,
           section-by-section breakdown — skills, education, experience, and formatting — with an
           ATS-compatibility check and concrete suggestions for improvement. It also matches a resume
           against a pasted job description, generates personalised career feedback, and surfaces
-          trends across every resume analysed on an analytics dashboard. A guided resume builder lets
-          users compose one from scratch with structured, repeatable work-experience and education
-          entries, an in-app AI assistant (Google Gemini) that reviews the draft for gaps and rewrites
-          weak sections on request, and one-click export to a genuinely ATS-parseable PDF with real
-          embedded text rather than a rasterised image. Deployed on Render's free tier against an
-          isolated Postgres schema (Neon) — the first request after a period of inactivity can take
-          up to a minute to wake the instance.
+          trends across every resume analysed on an analytics dashboard. An AI Tools page turns an
+          analysed resume into a tailored cover letter (three tones), sharper bullet points, a
+          job-tailoring report, interview practice questions and a LinkedIn profile, all written by
+          Google Gemini from the resume's own facts. A guided resume builder lets users compose a
+          resume from scratch with structured, repeatable work-experience and education entries, an
+          in-app assistant that reviews the draft for gaps and offers rewrites you can apply in one
+          click, and one-click export to a genuinely ATS-parseable PDF with real embedded text rather
+          than a rasterised image. Deployed on Render's free tier against an isolated Postgres schema
+          (Neon) — the first request after a period of inactivity can take up to a minute to wake the
+          instance.
         </p>
 
             <div class="project-gallery">
@@ -147,7 +150,19 @@
             <figcaption>Scored analysis &amp; employer summary</figcaption>
           </figure>
           <figure>
-            <img src="assets/screenshots/dashboard.webp" alt="Smart Resume Analyser analytics dashboard with score distribution and ATS breakdown" loading="lazy">
+            <img src="assets/screenshots/job-match.webp" alt="Smart Resume Analyser job-match analysis showing a match score and matched skills" loading="lazy">
+            <figcaption>Job-description match</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/ai-tools.webp" alt="Smart Resume Analyser AI Tools page with a Gemini-written LinkedIn profile" loading="lazy">
+            <figcaption>AI Tools: cover letter, LinkedIn, interview prep</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/builder.webp" alt="Smart Resume Analyser resume builder with the AI assistant applying a suggested summary" loading="lazy">
+            <figcaption>Resume builder &amp; AI assistant</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/dashboard.webp" alt="Smart Resume Analyser analytics dashboard with score distribution and top skills" loading="lazy">
             <figcaption>Analytics dashboard</figcaption>
           </figure>
           <figure>
@@ -162,14 +177,15 @@
 
             <ul class="project-features">
           <li>OCR + PDF text extraction (PyMuPDF, Tesseract) so both scanned images and native PDFs work</li>
-          <li>NLP-driven skill extraction and section scoring (NLTK tokenisation, stopword filtering, tagging)</li>
+          <li>NLP-driven skill extraction and section scoring (NLTK tokenisation, stopword filtering, tagging), with education and experience read from their own sections and seniority taken from the dated years</li>
           <li>ATS-compatibility simulation with a transparent, explainable scoring breakdown</li>
           <li>Job-description matching to rank a resume's fit against a specific role</li>
-          <li>Personalised feedback generation based on career goal, experience level, and target role</li>
-          <li>Guided resume builder with an in-app AI assistant (Google Gemini) that flags gaps in the draft and applies suggested rewrites in one click</li>
+          <li>AI Tools (Google Gemini): cover letter in three tones, bullet improver, job tailoring, interview prep and LinkedIn profile, with the resume and job text treated as untrusted data, input limits, per-user rate limits and plain-text replies</li>
+          <li>Guided resume builder with an in-app AI assistant that flags gaps in the draft and applies suggested rewrites in one click; the server validates every suggestion before the page shows an Apply button</li>
           <li>Native-text PDF export — real embedded text via direct PDF drawing, not a rasterised image, so builder output is actually machine-readable by real ATS software</li>
-          <li>Auth system with email-based password reset (SendGrid) and per-user history</li>
+          <li>Auth system with email-based password reset (SendGrid), per-user history and rate-limited sign-in</li>
           <li>Analytics dashboard (score distribution, top skills, career-field breakdown) with CSV/JSON export for Power BI</li>
+          <li>Frosted monochrome light and dark themes, a keyboard skip link, visible focus rings and 100+ automated tests</li>
         </ul>
           </div>
         </details>
@@ -392,7 +408,7 @@
             <div class="try-it">
               <p class="try-it-title"><span aria-hidden="true">▶</span> How to try it</p>
               <p class="try-it-body">Sign in with <code>owner</code> / <code>password123</code>, or register your own.</p>
-              <!-- DEMO-PAUSED --><p class="try-it-note">The live demo is paused until about November 1 (free-hosting monthly limit). Please watch the demo video instead.</p><!-- /DEMO-PAUSED:The first load can take up to a minute while the free server wakes up. -->
+              <!-- DEMO-PAUSED --><p class="try-it-note">The live demo is paused (free-hosting monthly limit). Please watch the demo video instead.</p><!-- /DEMO-PAUSED:The first load can take up to a minute while the free server wakes up. -->
               <button class="demo-open" type="button" data-video="assets/demos/library-management.mp4" data-poster="assets/demos/library-management.jpg" data-title="Library Management System" data-tall="0">
                 <img src="assets/demos/library-management.jpg" alt="" loading="lazy" width="320" height="200">
                 <span class="demo-play" aria-hidden="true">▶</span>
@@ -477,7 +493,7 @@
             <div class="try-it">
               <p class="try-it-title"><span aria-hidden="true">▶</span> How to try it</p>
               <p class="try-it-body">Create a free account (no email confirmation) and add an expense.</p>
-              <!-- DEMO-PAUSED --><p class="try-it-note">The live demo is paused until about November 1 (free-hosting monthly limit). Please watch the demo video instead.</p><!-- /DEMO-PAUSED:The first request can take up to a minute while the free server wakes up. -->
+              <!-- DEMO-PAUSED --><p class="try-it-note">The live demo is paused (free-hosting monthly limit). Please watch the demo video instead.</p><!-- /DEMO-PAUSED:The first request can take up to a minute while the free server wakes up. -->
               <button class="demo-open" type="button" data-video="assets/demos/expense-tracker.mp4" data-poster="assets/demos/expense-tracker.jpg" data-title="Expense Tracker" data-tall="1">
                 <img src="assets/demos/expense-tracker.jpg" alt="" loading="lazy" width="320" height="200">
                 <span class="demo-play" aria-hidden="true">▶</span>

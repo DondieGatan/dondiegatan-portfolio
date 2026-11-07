@@ -475,9 +475,9 @@
           <div class="project-body">
             <div>
             <h3>Expense Tracker</h3>
-            <p class="project-tagline">Flask REST API + React Native (TypeScript) app, deployed to Android and the web</p>
+            <p class="project-tagline">Flask REST API + React Native (TypeScript) app with AI-assisted insights, on Android and the web</p>
           </div>
-            <p class="project-lede">A Flask REST API with a React Native (TypeScript) client, deployed on Render and Vercel and shipped as an Android APK.</p>
+            <p class="project-lede">A Flask REST API with a React Native (TypeScript) client: type expenses in plain words, get a spending coach and a month-end forecast, and switch between light and dark. Live on Render and Vercel and shipped as an Android APK.</p>
             <div class="project-stack">
           <span class="tag">Flask</span>
           <span class="tag">SQLAlchemy</span>
@@ -488,12 +488,13 @@
           <span class="tag">Postgres</span>
           <span class="tag">Render</span>
           <span class="tag">Vercel</span>
+          <span class="tag">Gemini</span>
           <span class="tag">pytest</span>
         </div>
             <div class="try-it">
               <p class="try-it-title"><span aria-hidden="true">▶</span> How to try it</p>
-              <p class="try-it-body">Create a free account (no email confirmation) and add an expense.</p>
-              <!-- DEMO-PAUSED --><p class="try-it-note">The live demo is paused (free-hosting monthly limit). Please watch the demo video instead.</p><!-- /DEMO-PAUSED:The first request can take up to a minute while the free server wakes up. -->
+              <p class="try-it-body">Create a free account (no email confirmation), then tap the + button and try Magic add: type &ldquo;coffee 15 and taxi 30 yesterday&rdquo;.</p>
+              <p class="try-it-note">The first request can take up to a minute while the free server wakes up.</p>
               <button class="demo-open" type="button" data-video="assets/demos/expense-tracker.mp4" data-poster="assets/demos/expense-tracker.jpg" data-title="Expense Tracker" data-tall="1">
                 <img src="assets/demos/expense-tracker.jpg" alt="" loading="lazy" width="320" height="200">
                 <span class="demo-play" aria-hidden="true">▶</span>
@@ -502,7 +503,7 @@
             </div>
             <div class="project-actions">
               <div class="project-links">
-            <!-- DEMO-PAUSED --><span class="btn btn-small btn-paused" role="note">Live demo paused</span>
+            <a href="https://expense-tracker-web-rosy.vercel.app" target="_blank" rel="noopener" class="btn btn-small btn-primary">Live Demo ↗</a>
             <a href="https://github.com/DondieGatan/expense-tracker" target="_blank" rel="noopener" class="btn btn-small">Source Code ↗</a>
           </div>
             </div>
@@ -513,50 +514,60 @@
           <summary><span class="when-closed">View details</span><span class="when-open">Hide details</span></summary>
           <div class="project-more-body">
             <p class="project-desc">
-          A personal expense tracker rebuilt as a Flask JSON API (SQLAlchemy + JWT auth)
-          behind a React Native / Expo (TypeScript) app, deployed for real: the API runs
-          on Render against a Postgres database (Neon), the web build is deployed on Vercel,
-          and the app itself also ships as an installable Android APK via EAS Build — not
-          just a localhost demo. Light/dark theming, animated charts, a SendGrid-backed
-          forgot-password flow, CSV export, and quick-add templates round out the UX.
+          A personal expense tracker built as a Flask JSON API (SQLAlchemy + JWT auth) behind a
+          React Native / Expo (TypeScript) app. Type expenses the way you would say them, and a
+          spending coach turns your history into a month-end forecast, a safe daily amount and the
+          categories that grew. Every number is calculated in Python; when a Gemini key is set the model
+          only words the result, and without one the app falls back to rule-based logic (the live demo
+          runs on that fallback). The API runs on Render against Postgres (Neon), the web build is on
+          Vercel, and the app also ships as an installable Android APK via EAS Build.
         </p>
 
             <div class="project-gallery">
           <figure>
-            <img src="assets/screenshots/expense-tracker/login.png" alt="Expense Tracker login screen: a dark glass card with a green accent glow over a wavy green gradient background, email and password fields, and a circular submit button" loading="lazy">
-            <figcaption>Login — glass card over a wavy gradient background</figcaption>
+            <img src="assets/screenshots/expense-tracker/login.webp" alt="Expense Tracker sign-in screen: a dark glass card over a lime and teal gradient with email and password fields and a round submit button" loading="lazy" width="1200" height="750">
+            <figcaption>Sign in — glass card over a lime and teal gradient</figcaption>
           </figure>
           <figure>
-            <img src="assets/screenshots/expense-tracker/register.png" alt="Expense Tracker registration screen with full name, email, and password fields over the same wavy green gradient background as the login screen" loading="lazy">
-            <figcaption>Register — full name, email, and password</figcaption>
+            <img src="assets/screenshots/expense-tracker/dashboard.webp" alt="Expense Tracker dashboard in dark mode with the month total and budget bar, a coach card, totals and a category donut chart" loading="lazy" width="1200" height="750">
+            <figcaption>Dashboard — budget bar, coach, category chart</figcaption>
           </figure>
           <figure>
-            <img src="assets/screenshots/expense-tracker/dashboard.webp" alt="Expense Tracker dashboard with budget progress, recent expenses, and a category breakdown chart" loading="lazy">
-            <figcaption>Dashboard — budget tracking, recent expenses, category chart</figcaption>
+            <img src="assets/screenshots/expense-tracker/dashboard-light.webp" alt="Expense Tracker dashboard in light mode with the same budget card, coach and totals on a cream background" loading="lazy" width="1200" height="750">
+            <figcaption>Light mode — same dashboard, light theme</figcaption>
           </figure>
           <figure>
-            <img src="assets/screenshots/expense-tracker/add-expense.png" alt="Expense Tracker add expense form with quick-add templates, category chips, and payment method selection" loading="lazy">
-            <figcaption>Add expense — quick-add templates, category chips</figcaption>
+            <img src="assets/screenshots/expense-tracker/insights.webp" alt="Expense Tracker Insights screen with a one-sentence summary of the month, a month-end forecast and a pace ring" loading="lazy" width="1200" height="750">
+            <figcaption>Insights — forecast, pace and safe daily spend</figcaption>
           </figure>
           <figure>
-            <img src="assets/screenshots/expense-tracker/budget.png" alt="Expense Tracker monthly budget screen with a 12-currency selector chip row and a live spending progress bar" loading="lazy">
-            <figcaption>Budget — per-user currency selection, live progress</figcaption>
+            <img src="assets/screenshots/expense-tracker/magic-add.webp" alt="Expense Tracker Magic add: the sentence coffee 15 and taxi 30 yesterday read into two expenses, Coffee 15 and Taxi 30, ready to add" loading="lazy" width="1200" height="750">
+            <figcaption>Magic add — plain words read into expenses</figcaption>
           </figure>
           <figure>
-            <img src="assets/screenshots/expense-tracker/history.png" alt="Expense Tracker expense history screen with a search bar, category filter chips, and a CSV export button" loading="lazy">
-            <figcaption>History — search, category filters, CSV export</figcaption>
+            <img src="assets/screenshots/expense-tracker/add-expense.webp" alt="Expense Tracker add expense form with Magic add, quick-add chips, amount, date and category chips" loading="lazy" width="1200" height="750">
+            <figcaption>Add expense — quick-add chips and category</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/expense-tracker/history.webp" alt="Expense Tracker history grouped by day with a search bar, category filter chips and a CSV export button" loading="lazy" width="1200" height="750">
+            <figcaption>History — day groups, search, filters, CSV export</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/expense-tracker/appearance.webp" alt="Expense Tracker budget screen with a currency chip selector and an Auto, Light and Dark appearance switch" loading="lazy" width="1200" height="750">
+            <figcaption>Budget — currency and Auto / Light / Dark appearance</figcaption>
           </figure>
         </div>
 
             <ul class="project-features">
           <li>JWT-authenticated Flask REST API (SQLAlchemy + Flask-Migrate) against Postgres, deployed on Render via Docker</li>
-          <li>React Native / Expo mobile app — bottom-tab navigation, animated dashboard charts, category filtering, budget tracking</li>
-          <li>Per-user currency preference (12 ISO 4217 codes) persisted server-side, driving every amount shown across the app</li>
-          <li>Light/dark theme with persisted preference, swipe-to-delete on native (a dedicated delete action on web), CSV export, pull-to-refresh, and haptic feedback</li>
-          <li>Forgot/reset password flow — a SendGrid-emailed one-time code, hashed and single-use server-side, no account enumeration</li>
-          <li>Real Android APK built and distributed via EAS Build, not just an Expo Go preview</li>
-          <li>Web build (Expo for Web) deployed on Vercel, hitting the same Flask API through a locked-down CORS allowlist</li>
-          <li>CORS allowlist and per-endpoint rate limiting on auth routes; pytest suite covering auth, ownership isolation, and CRUD</li>
+          <li>Magic add: type &ldquo;coffee 15 and taxi 30 yesterday&rdquo; and review the parsed expenses before adding them, plus automatic category suggestions</li>
+          <li>Insights tab: month-end forecast that treats recurring bills separately, a safe daily spend, categories that grew, unusual expenses and a question box</li>
+          <li>AI with guardrails: figures are calculated in Python, Gemini only words them, any answer that invents a number is rejected, and every feature has a rule-based path (the live demo uses it)</li>
+          <li>Auto / Light / Dark appearance that follows the device by default, with an animated add button that respects reduced motion</li>
+          <li>React Native / Expo app &mdash; bottom-tab navigation, animated charts, day-grouped history, budget ring with a suggested budget, 12 currencies, CSV export</li>
+          <li>Forgot/reset password flow &mdash; a SendGrid-emailed one-time code, hashed and single-use server-side, no account enumeration</li>
+          <li>Real Android APK built via EAS Build, and a web build on Vercel hitting the same API through a locked-down CORS allowlist</li>
+          <li>Rate limiting on auth and AI routes; 110 backend pytest tests covering auth, ownership isolation, CRUD and the AI paths</li>
         </ul>
           </div>
         </details>

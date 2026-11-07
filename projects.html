@@ -201,9 +201,9 @@
             <div>
             <span class="featured-badge">★ Featured</span>
             <h3>Mori Matcha</h3>
-            <p class="project-tagline">Live cafe website with a real ordering backend and a voice-enabled AI assistant</p>
+            <p class="project-tagline">Live cafe website with a real ordering backend, a voice-enabled AI assistant and a digital loyalty card</p>
           </div>
-            <p class="project-lede">A production site for a real cafe: cart ordering with a Postgres order log, an admin dashboard, live Google Reviews, an event Party Cart, and an assistant that customers can talk to and that talks back.</p>
+            <p class="project-lede">A production site for a real cafe: cart ordering with a Postgres order log, an admin dashboard, live Google Reviews, an event Party Cart, a digital loyalty stamp card that cannot be cheated, and an assistant that customers can talk to and that talks back.</p>
             <div class="project-stack">
           <span class="tag">React</span>
           <span class="tag">Vite</span>
@@ -216,7 +216,7 @@
             <div class="try-it">
               <p class="try-it-title"><span aria-hidden="true">▶</span> How to try it</p>
               <p class="try-it-body">No account needed: build a drink, add it to the cart, and open the Party Cart. Then tap &ldquo;Ask Mori&rdquo; to chat, press Listen to hear an answer, or tap the microphone to ask out loud.</p>
-              <p class="try-it-note">Nothing is sent unless you press the Instagram button.</p>
+              <p class="try-it-note">Nothing is sent unless you press the Instagram button. A loyalty card opens from a private link the cafe sends each customer, so the video shows it with a sample customer; the home page has an example card.</p>
               <button class="demo-open" type="button" data-video="assets/demos/mori-matcha.mp4" data-poster="assets/demos/mori-matcha.jpg" data-title="Mori Matcha" data-tall="0">
                 <img src="assets/demos/mori-matcha.jpg" alt="" loading="lazy" width="320" height="200">
                 <span class="demo-play" aria-hidden="true">▶</span>
@@ -239,8 +239,9 @@
           A production website for a real cafe business — a React/Vite frontend backed by
           Vercel serverless functions and a Postgres order log, with an admin dashboard for
           managing incoming orders and per-drink availability, a live Google Reviews sync,
-          an event Party Cart page with a booking-inquiry builder, a customer-service assistant
-          that can be typed to or spoken to and reads its answers aloud, and full SEO/PWA setup.
+          an event Party Cart page with a booking-inquiry builder, a digital loyalty stamp card with
+          server-side anti-cheat rules, a customer-service assistant that can be typed to or spoken
+          to and reads its answers aloud, and full SEO/PWA setup.
           Deployed and actually in use, not just a demo.
         </p>
 
@@ -262,8 +263,12 @@
             <figcaption>Customer feedback — live Google Reviews sync</figcaption>
           </figure>
           <figure>
-            <img src="assets/screenshots/mori-matcha/party-cart.jpg" alt="Mori Matcha Party Cart page showing four event packages from 3,000 to 11,500 pesos, what is included, and the matcha varieties" loading="lazy">
+            <img src="assets/screenshots/mori-matcha/party-cart.jpg" alt="Mori Matcha Party Cart page showing four event packages from 3,500 to 12,500 pesos, what is included, and the matcha varieties" loading="lazy">
             <figcaption>Party Cart — event packages and booking inquiry</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/mori-matcha/loyalty-card.webp" alt="Mori Matcha digital loyalty card for a sample customer: the front with the member name and card number, and the stamp card with five matcha-bowl stamps collected and a Free seal for the tenth drink" loading="lazy" width="1200" height="640">
+            <figcaption>Loyalty card — front and stamp card (sample customer)</figcaption>
           </figure>
         </div>
 
@@ -273,8 +278,9 @@
           <li>Live Google Places reviews sync merged with a curated fallback list, capped and text-clamped to keep the section a tidy row of highlights</li>
           <li>Tri-state per-drink availability (available / unavailable / coming soon) managed from the admin panel, "New" badges for recently added drinks, plus Vercel Analytics</li>
           <li>Party Cart page for events — four packages, optional add-ons and booking notes, and an inquiry builder that validates the details (date, guest count, venue) and composes a ready-to-send Instagram message, copied or sent in one tap</li>
+          <li>Digital loyalty card replacing the paper stamp card: nine stamps earn the tenth drink free. Customers open a private link on their phone and watch each new stamp animate onto the card; staff add stamps and give free drinks from the admin page. Built to resist cheating: the browser holds no balance to edit, stamps come only from staff for orders marked paid, an order can be stamped once (enforced by a database unique index, so racing requests award one), a free drink is claimed in one atomic SQL statement, every change is an append-only ledger entry with undo, and the link is a 128-bit secret stored only as a hash and kept in the URL fragment so it never reaches the server logs or analytics. 31 automated tests run against an in-memory Postgres</li>
           <li>Full SEO/PWA setup — meta tags, JSON-LD kept in sync with the live opening hours, per-page share previews, installable manifest</li>
-          <li>"Ask Mori" customer-service assistant: answers questions about drinks, prices, sweetness and milk options, live open or closed status, ordering, payment and party carts from the site's own data and live availability, and never takes orders itself. Gemini writes the replies when an API key is configured; otherwise (the live demo's current mode) answers come from keyword rules over the same data, so it always responds</li>
+          <li>"Ask Mori" customer-service assistant: answers questions about drinks, prices, sweetness and milk options, live open or closed status, ordering, payment, party carts and the loyalty card from the site's own data and live availability, and never takes orders itself. Gemini writes the replies when an API key is configured; otherwise (the live demo's current mode) answers come from keyword rules over the same data, so it always responds</li>
           <li>Voice both ways using the browser's Web Speech API: a Listen button and an optional voice-replies switch read answers aloud, and a microphone button sends a spoken question automatically. Guarded input (500-character cap, 10-turn history, per-client rate limit) and replies stripped of markdown, links and emoji for clean speech</li>
         </ul>
           </div>

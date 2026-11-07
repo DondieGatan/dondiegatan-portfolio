@@ -201,19 +201,21 @@
             <div>
             <span class="featured-badge">★ Featured</span>
             <h3>Mori Matcha</h3>
-            <p class="project-tagline">Live cafe website with a real ordering and admin backend</p>
+            <p class="project-tagline">Live cafe website with a real ordering backend and a voice-enabled AI assistant</p>
           </div>
-            <p class="project-lede">A production site for a real cafe: cart ordering with a Postgres order log, an admin dashboard, live Google Reviews, and an event Party Cart.</p>
+            <p class="project-lede">A production site for a real cafe: cart ordering with a Postgres order log, an admin dashboard, live Google Reviews, an event Party Cart, and an assistant that customers can talk to and that talks back.</p>
             <div class="project-stack">
           <span class="tag">React</span>
           <span class="tag">Vite</span>
           <span class="tag">Vercel</span>
           <span class="tag">Postgres</span>
+          <span class="tag">Gemini</span>
+          <span class="tag">Web Speech API</span>
           <span class="tag">JavaScript</span>
         </div>
             <div class="try-it">
               <p class="try-it-title"><span aria-hidden="true">▶</span> How to try it</p>
-              <p class="try-it-body">No account needed: build a drink, add it to the cart, and open the Party Cart.</p>
+              <p class="try-it-body">No account needed: build a drink, add it to the cart, and open the Party Cart. Then tap &ldquo;Ask Mori&rdquo; to chat, press Listen to hear an answer, or tap the microphone to ask out loud.</p>
               <p class="try-it-note">Nothing is sent unless you press the Instagram button.</p>
               <button class="demo-open" type="button" data-video="assets/demos/mori-matcha.mp4" data-poster="assets/demos/mori-matcha.jpg" data-title="Mori Matcha" data-tall="0">
                 <img src="assets/demos/mori-matcha.jpg" alt="" loading="lazy" width="320" height="200">
@@ -237,7 +239,8 @@
           A production website for a real cafe business — a React/Vite frontend backed by
           Vercel serverless functions and a Postgres order log, with an admin dashboard for
           managing incoming orders and per-drink availability, a live Google Reviews sync,
-          an event Party Cart page with a booking-inquiry builder, and full SEO/PWA setup.
+          an event Party Cart page with a booking-inquiry builder, a customer-service assistant
+          that can be typed to or spoken to and reads its answers aloud, and full SEO/PWA setup.
           Deployed and actually in use, not just a demo.
         </p>
 
@@ -245,6 +248,10 @@
           <figure>
             <img src="assets/screenshots/mori-matcha/home.jpg" alt="Mori Matcha homepage hero and menu section with featured drinks and New-tagged items including Oreo Cloud Matcha" loading="lazy">
             <figcaption>Homepage — featured drinks and menu</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/screenshots/mori-matcha/assistant.webp" alt="Mori Matcha Ask Mori assistant on desktop and phone, answering how much the Ube Matcha Latte is and how to order, with a Listen button on each reply and a microphone button beside the message box" loading="lazy" width="1200" height="640">
+            <figcaption>Ask Mori — chat, spoken answers and voice input</figcaption>
           </figure>
           <figure>
             <img src="assets/screenshots/mori-matcha/cart-flow.png" alt="Mori Matcha cart showing a numbered How Ordering Works guide before checkout" loading="lazy">
@@ -267,6 +274,8 @@
           <li>Tri-state per-drink availability (available / unavailable / coming soon) managed from the admin panel, "New" badges for recently added drinks, plus Vercel Analytics</li>
           <li>Party Cart page for events — four packages, optional add-ons and booking notes, and an inquiry builder that validates the details (date, guest count, venue) and composes a ready-to-send Instagram message, copied or sent in one tap</li>
           <li>Full SEO/PWA setup — meta tags, JSON-LD kept in sync with the live opening hours, per-page share previews, installable manifest</li>
+          <li>"Ask Mori" customer-service assistant: answers questions about drinks, prices, sweetness and milk options, live open or closed status, ordering, payment and party carts from the site's own data and live availability, and never takes orders itself. Gemini writes the replies when an API key is configured; otherwise (the live demo's current mode) answers come from keyword rules over the same data, so it always responds</li>
+          <li>Voice both ways using the browser's Web Speech API: a Listen button and an optional voice-replies switch read answers aloud, and a microphone button sends a spoken question automatically. Guarded input (500-character cap, 10-turn history, per-client rate limit) and replies stripped of markdown, links and emoji for clean speech</li>
         </ul>
           </div>
         </details>

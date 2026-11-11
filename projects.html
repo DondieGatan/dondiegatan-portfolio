@@ -185,7 +185,7 @@
           <li>Native-text PDF export — real embedded text via direct PDF drawing, not a rasterised image, so builder output is actually machine-readable by real ATS software</li>
           <li>Auth system with email-based password reset (SendGrid), per-user history and rate-limited sign-in</li>
           <li>Analytics dashboard (score distribution, top skills, career-field breakdown) with CSV/JSON export for Power BI</li>
-          <li>Frosted monochrome light and dark themes, a keyboard skip link, visible focus rings and 100+ automated tests</li>
+          <li>Frosted monochrome light and dark themes, a keyboard skip link, visible focus rings and 140+ automated tests</li>
         </ul>
           </div>
         </details>
@@ -267,7 +267,7 @@
             <figcaption>Party Cart — event packages and booking inquiry</figcaption>
           </figure>
           <figure>
-            <img src="assets/screenshots/mori-matcha/loyalty-card.webp" alt="Mori Matcha digital loyalty card for a sample customer: the front with the member name and card number, and the stamp card with five matcha-bowl stamps collected and a Free seal for the tenth drink" loading="lazy" width="1200" height="640">
+            <img src="assets/screenshots/mori-matcha/loyalty-card.webp" alt="Mori Matcha digital loyalty card for a sample customer: the front with the member name, valid-until date and card number, and the stamp card with five matcha-bowl stamps collected and a Free seal for the tenth drink" loading="lazy" width="1200" height="640">
             <figcaption>Loyalty card — front and stamp card (sample customer)</figcaption>
           </figure>
         </div>
@@ -280,7 +280,7 @@
           <li>Party Cart page for events — four packages, optional add-ons and booking notes, and an inquiry builder that validates the details (date, guest count, venue) and composes a ready-to-send Instagram message, copied or sent in one tap</li>
           <li>Digital loyalty card replacing the paper stamp card: nine stamps earn the tenth drink free. Customers open a private link on their phone and watch each new stamp animate onto the card; staff add stamps and give free drinks from the admin page. Built to resist cheating: the browser holds no balance to edit, stamps come only from staff for orders marked paid, an order can be stamped once (enforced by a database unique index, so racing requests award one), a free drink is claimed in one atomic SQL statement, every change is an append-only ledger entry (a deleted entry is hidden but never erased), and the link is a 128-bit secret stored only as a hash and kept in the URL fragment so it never reaches the server logs or analytics. Each card has a valid-until date that customers see, with an expires-soon warning and a server-enforced block on stamps once it has passed; staff can edit, delete and restore cards and filter the list by expiring or expired. 66 automated tests run against an in-memory Postgres</li>
           <li>Full SEO/PWA setup — meta tags, JSON-LD kept in sync with the live opening hours, per-page share previews, installable manifest</li>
-          <li>"Ask Mori" customer-service assistant: answers questions about drinks, prices, sweetness and milk options, live open or closed status, ordering, payment, party carts and the loyalty card from the site's own data and live availability, and never takes orders itself. Gemini writes the replies when an API key is configured; otherwise (the live demo's current mode) answers come from keyword rules over the same data, so it always responds</li>
+          <li>"Ask Mori" customer-service assistant: answers questions about drinks, prices, sweetness and milk options, live open or closed status, ordering, payment, party carts and the loyalty card from the site's own data and live availability, and never takes orders itself. Gemini writes the replies on the live site (with a second model as a fallback), and if both fail or no key is set, answers come from keyword rules over the same data, so it always responds</li>
           <li>Voice both ways using the browser's Web Speech API: a Listen button and an optional voice-replies switch read answers aloud, and a microphone button sends a spoken question automatically. Guarded input (500-character cap, 10-turn history, per-client rate limit) and replies stripped of markdown, links and emoji for clean speech</li>
         </ul>
           </div>
